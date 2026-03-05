@@ -669,6 +669,64 @@
       color: var(--accent);
     }
 
+    @media(max-width:600px) {
+
+      .heatmap th,
+      .heatmap td {
+        padding: 10px 3px;
+      }
+
+      .heatmap th {
+        font-size: 7px;
+        letter-spacing: 0;
+        min-width: 0 !important;
+      }
+
+      .heatmap th.bank-col {
+        max-width: 80px;
+      }
+
+      .heatmap td.bank-name-cell {
+        padding-right: 2px;
+        font-size: 10px;
+        white-space: normal;
+        line-height: 1.15;
+      }
+
+      .heatmap td.heat-cell {
+        font-size: 10px;
+      }
+    }
+
+    @media(max-width:600px) {
+
+      .heatmap th,
+      .heatmap td {
+        padding: 12px 4px;
+        font-size: 9px;
+      }
+
+      .heatmap th {
+        font-size: 8px;
+      }
+
+      .heatmap th.bank-col {
+        min-width: 64px;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .heatmap td.bank-name-cell {
+        padding-right: 4px;
+        font-size: 12px;
+      }
+
+      .heatmap td.heat-cell {
+        font-size: 11px;
+      }
+    }
+
     /* HEATMAP — mobil bar kartları */
 
     .hm-row:last-child {
