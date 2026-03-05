@@ -1487,7 +1487,7 @@
     /* ── MOBILE 600px ── */
     @media(max-width:600px) {
       .container {
-        padding: 0 16px 40px;
+        padding: 0 16px calc(40px + env(safe-area-inset-bottom));
         overflow-x: hidden;
       }
 
