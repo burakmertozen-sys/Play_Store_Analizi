@@ -2584,13 +2584,10 @@
       container.innerHTML = '';
 
       const tableWrapper = document.createElement('div');
-      tableWrapper.style.overflowX = 'auto';
+      // Removed overflowX='auto' and scroll settings to force single-screen fit
       if (window.innerWidth <= 600) {
-        tableWrapper.style.paddingBottom = '16px';
-        tableWrapper.style.margin = '0 -16px';
-        tableWrapper.style.paddingLeft = '16px';
-        tableWrapper.style.paddingRight = '16px';
-        tableWrapper.style.webkitOverflowScrolling = 'touch';
+        // Mobile specific wrapper styling to remove horizontal padding constraint
+        tableWrapper.style.margin = '0 -12px';
       }
 
       const table = document.createElement('table'); table.className = 'heatmap';
@@ -2604,10 +2601,10 @@
         const tr = document.createElement('tr');
         const total = Object.values(bank.errors).reduce((a, b) => a + b, 0);
         const churn = getChurnRisk(bank);
-        let h = `<td class="bank-name-cell">${bank.name}</td>`;
+        let h = `<td class="bank-name-cell">${window.innerWidth <= 600 ? bank.name.split(' ')[0] : bank.name}</td>`;
         CAT_KEYS.forEach(k => { const v = bank.errors[k]; h += `<td class="heat-cell" style="background:${heatBg(v, maxPerCat[k])};color:${heatTxt(v, maxPerCat[k])}">${v}</td>`; });
         h += `<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total > 20 ? '#c0392b' : total > 14 ? '#d68910' : '#5a7a6a'}">${total}</td>`;
-        h += `<td>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:9px;padding:4px 8px;border-radius:4px')}</td>`;
+        h += `<td>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:8px;padding:3px 4px;border-radius:3px')}</td>`;
         tr.innerHTML = h; tbody.appendChild(tr);
       });
       table.appendChild(tbody);
