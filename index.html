@@ -69,18 +69,16 @@
   .dominant-tag{font-size:9px;padding:3px 8px;border:1px solid;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
 
   /* RANKING MOBILE CARDS */
-  .rank-card{display:none;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--surface);transition:background 0.15s;}
+  .rank-card{display:none;border-bottom:1px solid var(--border);background:var(--surface);}
   .rank-card:last-child{border-bottom:none;}
-  .rank-card:hover{background:var(--surface2);}
-  .rank-card-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-  .rank-card-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--muted);line-height:1;min-width:34px;}
+  .rank-card-row{display:flex;align-items:center;padding:10px 14px;gap:0;}
+  .rank-card-num{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--muted);width:28px;flex-shrink:0;}
   .rank-card-num.top{color:var(--accent);}
-  .rank-card-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;flex:1;letter-spacing:-0.01em;}
-  .rank-card-score{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;line-height:1;}
-  .rank-card-divider{height:1px;background:var(--border);margin:8px 0;}
-  .rank-card-meta{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:center;}
-  .rank-card-store{font-size:11px;color:#f5c542;font-weight:600;}
-  .rank-card-gap{font-size:10px;color:var(--danger);font-weight:600;}
+  .rank-card-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;flex:1;letter-spacing:-0.01em;}
+  .rank-card-score{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;line-height:1;min-width:40px;text-align:right;}
+  .rank-card-meta{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;padding:0 14px 9px 42px;}
+  .rank-card-store{font-size:10px;color:#f5c542;font-weight:600;}
+  .rank-card-gap{font-size:10px;color:var(--danger);}
   .rank-card-issues{font-size:10px;color:var(--muted);}
 
   @media(max-width:600px){
@@ -113,8 +111,6 @@
   .legend-pct{font-size:10px;color:var(--muted);margin-left:2px;}
 
   /* HEATMAP — desktop tablo */
-  .heatmap-wrap{width:100%;}
-  .heat-mobile{display:none;}
   .heatmap{border-collapse:collapse;width:100%;}
   .heatmap th,.heatmap td{padding:10px 12px;text-align:center;font-family:'DM Mono',monospace;}
   .heatmap th{font-size:9px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400;}
@@ -125,8 +121,7 @@
   .heatmap tr:hover td.bank-name-cell{color:var(--accent);}
 
   /* HEATMAP — mobil bar kartları */
-  .heat-mobile{background:var(--surface);}
-  .hm-row{padding:10px 0;border-bottom:1px solid var(--border);background:var(--surface);}
+
   .hm-row:last-child{border-bottom:none;}
   .hm-row-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
   .hm-bank-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;flex:1;}
@@ -138,7 +133,20 @@
   .hm-bar-fill{height:100%;}
   .hm-bar-val{font-size:10px;font-weight:600;width:16px;text-align:right;flex-shrink:0;}
 
-  /* RADAR */
+  /* HEATMAP mobile bars */
+  .hm-row{padding:10px 0;border-bottom:1px solid var(--border);}
+  .hm-row:last-child{border-bottom:none;}
+  .hm-row-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+  .hm-bank-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;flex:1;}
+  .hm-total{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
+  .hm-bars{display:flex;flex-direction:column;gap:5px;}
+  .hm-bar-row{display:flex;align-items:center;gap:8px;}
+  .hm-bar-label{font-size:8px;letter-spacing:0.06em;text-transform:uppercase;width:50px;flex-shrink:0;font-family:'DM Mono',monospace;}
+  .hm-bar-track{flex:1;height:5px;background:var(--bg);}
+  .hm-bar-fill{height:100%;}
+  .hm-bar-val{font-size:10px;font-weight:600;width:16px;text-align:right;flex-shrink:0;}
+
+    /* RADAR */
   .radar-controls{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
   .radar-toggle{padding:4px 10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
   .radar-svg{display:block;margin:0 auto;max-width:100%;}
@@ -299,9 +307,6 @@
     .legend-val{font-size:10px;}
     .legend-pct{font-size:8px;}
 
-    /* Heatmap — masaüstü tablo gizle, mobil barlar göster */
-    .heatmap-wrap{display:none!important;}
-    .heat-mobile{display:block!important;}
 
     /* Radar */
     .radar-controls{gap:3px;margin-bottom:8px;}
@@ -477,8 +482,7 @@
     </div>
     <div class="chart-card full">
       <div class="chart-title">Isı Haritası · Banka × Hata Kategorisi</div>
-      <div class="heatmap-wrap"><table class="heatmap" id="heatmap"></table></div>
-      <div class="heat-mobile" id="heat-mobile"></div>
+      <div id="heatmap-container"></div>
     </div>
   </div>
 
@@ -652,16 +656,15 @@ sortedBanks.forEach((bank,idx)=>{
   const mcard=document.createElement('div');
   mcard.className='rank-card';
   mcard.innerHTML=`
-    <div class="rank-card-top">
+    <div class="rank-card-row">
       <div class="rank-card-num ${idx===0?'top':''}">${String(idx+1).padStart(2,'0')}</div>
       <div class="rank-card-name">${bank.name}</div>
       <div class="rank-card-score ${sc}">${bank.score}</div>
     </div>
-    <div class="rank-card-divider"></div>
     <div class="rank-card-meta">
-      ${bank.storeRating?`<span class="rank-card-store">★ Store ${bank.storeRating}</span>`:''}
-      ${gap?`<span class="rank-card-gap">↓ ${gap} fark</span>`:''}
-      <span class="rank-card-issues">${bank.totalLow}/30 şikayet</span>
+      ${bank.storeRating?`<span class="rank-card-store">★ ${bank.storeRating}</span>`:''}
+      ${gap?`<span class="rank-card-gap">↓ ${gap}</span>`:''}
+      <span class="rank-card-issues">${bank.totalLow}/30</span>
       <span class="dominant-tag" style="color:${dom.hex};border-color:${dom.hex}44">${dom.label}</span>
       ${churnBadge(churn.level,churn.label)}
     </div>`;
@@ -747,51 +750,52 @@ drawRadar();
 const maxPerCat={};CAT_KEYS.forEach(k=>{maxPerCat[k]=Math.max(...banks.map(b=>b.errors[k]));});
 function heatBg(v,max){if(!max||!v) return 'rgba(90,122,106,0.08)';const t=v/max;if(t<0.33) return`rgba(26,156,91,${0.1+t*0.25})`;if(t<0.66) return`rgba(214,137,16,${0.12+t*0.2})`;return`rgba(192,57,43,${0.12+t*0.4})`;}
 function heatTxt(v,max){if(!max||!v) return '#8aaa98';const t=v/max;if(t<0.33) return '#1a6640';if(t<0.66) return '#8a5a00';return '#8b1a10';}
-const hmTable=document.getElementById('heatmap');
-const thead=document.createElement('thead');const hRow=document.createElement('tr');
-hRow.innerHTML=`<th class="bank-col">BANKA</th>`;
-CAT_LABELS.forEach((l,i)=>hRow.innerHTML+=`<th style="color:${CAT_HEX[i]}">${CAT_SHORT[i].toUpperCase()}</th>`);
-hRow.innerHTML+=`<th>TOPLAM</th><th>CHURN</th>`;
-thead.appendChild(hRow);hmTable.appendChild(thead);
-const tbody=document.createElement('tbody');
-banks.forEach(bank=>{
-  const tr=document.createElement('tr');
-  const total=Object.values(bank.errors).reduce((a,b)=>a+b,0);
-  const churn=getChurnRisk(bank);
-  let html=`<td class="bank-name-cell">${bank.name}</td>`;
-  CAT_KEYS.forEach(k=>{
-    const v=bank.errors[k];
-    html+=`<td class="heat-cell" style="background:${heatBg(v,maxPerCat[k])};color:${heatTxt(v,maxPerCat[k])}">${v}</td>`;
-  });
-  html+=`<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total>20?'#c0392b':total>14?'#d68910':'#5a7a6a'}">${total}</td>`;
-  html+=`<td>${churnBadge(churn.level,churn.label.split(' ')[0],'font-size:8px;padding:2px 7px')}</td>`;
-  tr.innerHTML=html;tbody.appendChild(tr);
-});hmTable.appendChild(tbody);
 
-// Mobile heatmap — bar-based, no scroll
-const heatMobile=document.getElementById('heat-mobile');
-banks.forEach(bank=>{
-  const total=Object.values(bank.errors).reduce((a,b)=>a+b,0);
-  const churn=getChurnRisk(bank);
-  const div=document.createElement('div');div.className='hm-row';
-  const barsHtml=CAT_KEYS.map((k,i)=>{
-    const v=bank.errors[k];if(!v)return'';
-    const pct=Math.round(v/total*100);
-    return`<div class="hm-bar-row">
-      <div class="hm-bar-label" style="color:${CAT_HEX[i]}">${CAT_SHORT[i]}</div>
-      <div class="hm-bar-track"><div class="hm-bar-fill" style="width:${pct}%;background:${CAT_HEX[i]};opacity:0.75"></div></div>
-      <div class="hm-bar-val" style="color:${CAT_HEX[i]}">${v}</div>
-    </div>`;
-  }).join('');
-  div.innerHTML=`
-    <div class="hm-row-header">
-      <span class="hm-bank-name">${bank.name}</span>
-      <span class="hm-total" style="color:${total>20?'#c0392b':total>14?'#d68910':'#5a7a6a'}">${total}/30</span>
-      ${churnBadge(churn.level,churn.label.split(' ')[0],'font-size:8px;padding:2px 7px')}
-    </div>
-    <div class="hm-bars">${barsHtml}</div>`;
-  heatMobile.appendChild(div);
-});
+function renderHeatmap(){
+  const container=document.getElementById('heatmap-container');
+  container.innerHTML='';
+  const isMobile=window.innerWidth<=600;
+
+  if(isMobile){
+    // Mobil: her banka için bar satırı
+    banks.forEach(bank=>{
+      const total=Object.values(bank.errors).reduce((a,b)=>a+b,0);
+      const churn=getChurnRisk(bank);
+      const div=document.createElement('div');
+      div.className='hm-row';
+      const barsHtml=CAT_KEYS.map((k,i)=>{
+        const v=bank.errors[k];if(!v)return'';
+        const pct=Math.round(v/Math.max(total,1)*100);
+        return`<div class="hm-bar-row"><span class="hm-bar-label" style="color:${CAT_HEX[i]}">${CAT_SHORT[i]}</span><div class="hm-bar-track"><div class="hm-bar-fill" style="width:${pct}%;background:${CAT_HEX[i]}44"></div></div><span class="hm-bar-val" style="color:${CAT_HEX[i]}">${v}</span></div>`;
+      }).join('');
+      div.innerHTML=`<div class="hm-row-header"><span class="hm-bank-name">${bank.name}</span><span class="hm-total" style="color:${total>20?'#c0392b':total>14?'#d68910':'#5a7a6a'}">${total}/30</span>${churnBadge(churn.level,churn.label.split(' ')[0],'font-size:8px;padding:2px 6px')}</div><div class="hm-bars">${barsHtml}</div>`;
+      container.appendChild(div);
+    });
+  } else {
+    // Masaüstü: tablo
+    const table=document.createElement('table');table.className='heatmap';
+    const thead=document.createElement('thead');const hRow=document.createElement('tr');
+    hRow.innerHTML=`<th class="bank-col">BANKA</th>`;
+    CAT_LABELS.forEach((l,i)=>hRow.innerHTML+=`<th style="color:${CAT_HEX[i]}">${CAT_SHORT[i].toUpperCase()}</th>`);
+    hRow.innerHTML+=`<th>TOPLAM</th><th>CHURN</th>`;
+    thead.appendChild(hRow);table.appendChild(thead);
+    const tbody=document.createElement('tbody');
+    banks.forEach(bank=>{
+      const tr=document.createElement('tr');
+      const total=Object.values(bank.errors).reduce((a,b)=>a+b,0);
+      const churn=getChurnRisk(bank);
+      let h=`<td class="bank-name-cell">${bank.name}</td>`;
+      CAT_KEYS.forEach(k=>{const v=bank.errors[k];h+=`<td class="heat-cell" style="background:${heatBg(v,maxPerCat[k])};color:${heatTxt(v,maxPerCat[k])}">${v}</td>`;});
+      h+=`<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total>20?'#c0392b':total>14?'#d68910':'#5a7a6a'}">${total}</td>`;
+      h+=`<td>${churnBadge(churn.level,churn.label.split(' ')[0],'font-size:8px;padding:2px 7px')}</td>`;
+      tr.innerHTML=h;tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    container.appendChild(table);
+  }
+}
+renderHeatmap();
+window.addEventListener('resize',()=>renderHeatmap());
 
 // ── BANK CARDS ───────────────────────────────────────────────────────────────
 const grid=document.getElementById('banks-grid');
