@@ -1546,606 +1546,193 @@
 
     /* ── MOBILE 600px ── */
     @media(max-width:600px) {
+      /* ── BASE ── */
       .container {
-        padding: 0 16px calc(40px + env(safe-area-inset-bottom));
+        padding: 0 14px calc(32px + env(safe-area-inset-bottom));
         overflow-x: hidden;
       }
 
+      /* ── HEADER: kompakt yan yana ── */
       header {
-        padding: 24px 0 16px;
-        gap: 16px;
-        margin-bottom: 24px;
+        padding: 16px 0 14px;
+        gap: 0;
+        margin-bottom: 16px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
       }
+      h1 { font-size: 21px; letter-spacing: -0.02em; }
+      h1 br { display: none; }
+      .tag { font-size: 8px; margin-bottom: 4px; letter-spacing: 0.12em; }
+      .header-meta { font-size: 9px; line-height: 1.4; margin-top: 3px; }
+      .header-right { flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+      .total-banks { font-size: 30px; line-height: 1; }
+      .total-label { font-size: 8px; letter-spacing: 0.06em; }
+      .header-btns { gap: 5px; width: auto; margin-top: 5px; }
+      .hdr-btn { padding: 7px 10px; font-size: 8px; gap: 4px; flex: none; border-radius: 4px; letter-spacing: 0.06em; }
+      .hdr-btn svg { width: 10px; height: 10px; }
 
-      h1 {
-        font-size: 28px;
-      }
-
-      .tag {
-        font-size: 11px;
-        margin-bottom: 8px;
-        letter-spacing: 0.1em;
-      }
-
-      .header-meta {
-        font-size: 12px;
-        line-height: 1.5;
-      }
-
-      .header-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .total-banks {
-        font-size: 40px;
-      }
-
-      .total-label {
-        font-size: 12px;
-      }
-
-      .header-btns {
-        gap: 8px;
-        width: 100%;
-        margin-top: 8px;
-      }
-
-      .hdr-btn {
-        padding: 14px 16px;
-        font-size: 12px;
-        gap: 8px;
-        flex: 1;
-        justify-content: center;
-        border-radius: 8px;
-      }
-
-      .hdr-btn svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      /* Overview */
+      /* ── OVERVIEW: 2×2 + 5. tam genişlik ── */
       .overview-strip {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-bottom: 32px;
-        background: transparent;
-        border: none;
-      }
-
-      .overview-card {
-        padding: 20px 16px;
-        border-radius: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        margin-bottom: 20px;
+        background: var(--border);
         border: 1px solid var(--border);
+        border-radius: 0;
+      }
+      .overview-card {
+        padding: 14px 12px;
+        border-radius: 0;
+        border: none;
         background: var(--surface);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        box-shadow: none;
       }
+      .overview-card:nth-child(5) { grid-column: 1 / -1; }
+      .ov-label { font-size: 8px; margin-bottom: 5px; letter-spacing: 0.08em; }
+      .ov-value { font-size: 24px; }
+      .ov-sub { font-size: 10px; margin-top: 4px; gap: 4px; line-height: 1.35; }
 
-      .overview-card:nth-child(5) {
-        grid-column: 1 / -1;
-      }
-
-      .ov-label {
-        font-size: 11px;
-        margin-bottom: 8px;
-        letter-spacing: 0.1em;
-      }
-
-      .ov-value {
-        font-size: 32px;
-      }
-
-      .ov-sub {
-        font-size: 12px;
-        margin-top: 8px;
-        gap: 6px;
-        line-height: 1.4;
-      }
-
-      /* Tooltip bottom sheet */
+      /* ── TOOLTIP: bottom sheet + handle ── */
       .yön-tip,
       .churn-badge .churn-tip {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: auto;
+        bottom: 0; left: 0; right: 0; top: auto;
         transform: none;
         width: 100%;
-        border-radius: 24px 24px 0 0;
-        padding: 28px 20px 40px;
-        font-size: 14px;
-        line-height: 1.6;
+        border-radius: 20px 20px 0 0;
+        padding: 8px 20px calc(32px + env(safe-area-inset-bottom));
+        font-size: 13px;
+        line-height: 1.65;
         z-index: 10000;
-        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 -8px 32px rgba(0,0,0,0.25);
         border: none;
-        border-top: 1px solid #4a5454;
+        border-top: 1px solid #2e4a40;
         background: #1a2420;
         color: #e8f5ef;
       }
-
-      /* Section */
-      .section-title {
-        font-size: 13px;
-        letter-spacing: 0.1em;
-        margin-bottom: 16px;
-        margin-top: 32px;
+      /* Handle çizgisi */
+      .yön-tip::before,
+      .churn-badge .churn-tip::before {
+        content: '';
+        display: block;
+        width: 36px; height: 4px;
+        background: rgba(255,255,255,0.18);
+        border-radius: 2px;
+        margin: 0 auto 14px;
       }
 
-      /* Ranking */
-      .ranking-table {
-        margin-bottom: 24px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        overflow: hidden;
-      }
+      /* ── SECTION TITLE ── */
+      .section-title { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 12px; margin-top: 24px; }
 
-      .rank-card {
-        padding: 0;
-      }
+      /* ── RANKING TABLE (format bozulmadan sadece spacing) ── */
+      .ranking-table { margin-bottom: 20px; border-radius: 0; border: 1px solid var(--border); overflow: hidden; }
+      .rank-card { padding: 0; }
+      .rank-card-row { padding: 12px 14px; }
+      .rank-card-num { font-size: 13px; width: 28px; }
+      .rank-card-name { font-size: 13px; }
+      .rank-card-score { font-size: 16px; }
+      .rank-card-meta { padding: 0 14px 10px 42px; gap: 5px 8px; line-height: 1.4; align-items: center; }
+      .rank-card-store { font-size: 10px; }
+      .rank-card-gap { font-size: 10px; }
+      .rank-card-issues { font-size: 10px; }
+      .dominant-tag, .churn-badge { font-size: 9px; padding: 3px 7px; border-radius: 3px; }
 
-      .rank-card-row {
-        padding: 16px;
-      }
+      /* ── CHARTS ── */
+      .chart-grid { gap: 2px; margin-bottom: 20px; background: var(--border); border: 1px solid var(--border); }
+      .chart-card { padding: 16px 14px; border-radius: 0; border: none; background: var(--surface); box-shadow: none; }
+      .chart-title { font-size: 11px; margin-bottom: 14px; letter-spacing: 0; }
 
-      .rank-card-num {
-        font-size: 16px;
-        width: 32px;
-      }
-
-      .rank-card-name {
-        font-size: 16px;
-      }
-
-      .rank-card-score {
-        font-size: 20px;
-      }
-
-      .rank-card-meta {
-        padding: 0 16px 16px 48px;
-        gap: 8px 12px;
-        line-height: 1.5;
-        align-items: center;
-      }
-
-      .rank-card-store {
-        font-size: 13px;
-      }
-
-      .rank-card-gap {
-        font-size: 13px;
-      }
-
-      .rank-card-issues {
-        font-size: 13px;
-      }
-
-      .dominant-tag,
-      .churn-badge {
-        font-size: 11px;
-        padding: 4px 8px;
-        border-radius: 4px;
-      }
-
-      /* Charts */
-      .chart-grid {
-        gap: 16px;
-        margin-bottom: 32px;
-        background: transparent;
-        border: none;
-      }
-
-      .chart-card {
-        padding: 24px 16px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      }
-
-      .chart-title {
-        font-size: 14px;
-        margin-bottom: 24px;
-        letter-spacing: 0;
-      }
-
-      /* Donut */
-      .donut-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-        justify-content: center;
-      }
-
-      .donut-svg {
-        width: 180px !important;
-        height: 180px !important;
-      }
-
-      .legend {
-        min-width: 100%;
-        flex: 1;
-        gap: 12px;
-      }
-
-      .legend-item {
-        gap: 12px;
-        padding: 12px 16px;
-        background: var(--surface2);
-        border-radius: 8px;
-      }
-
-      .legend-dot {
-        width: 12px;
-        height: 12px;
-      }
-
-      .legend-text {
-        font-size: 13px;
-      }
-
-      .legend-val {
-        font-size: 15px;
-      }
-
-      .legend-pct {
-        font-size: 13px;
-      }
+      /* Donut: yatay kompakt */
+      .donut-wrapper { flex-direction: row; align-items: center; gap: 16px; justify-content: flex-start; flex-wrap: nowrap; }
+      .donut-svg { width: 110px !important; height: 110px !important; flex-shrink: 0; }
+      .legend { min-width: 0; flex: 1; gap: 7px; }
+      .legend-item { gap: 7px; padding: 0; background: transparent; border-radius: 0; }
+      .legend-dot { width: 7px; height: 7px; }
+      .legend-text { font-size: 10px; }
+      .legend-val { font-size: 11px; }
+      .legend-pct { font-size: 9px; }
 
       /* Radar */
-      .radar-controls {
-        gap: 8px;
-        margin-bottom: 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+      .radar-controls { gap: 5px; margin-bottom: 12px; display: flex; flex-wrap: wrap; }
+      .radar-toggle { font-size: 9px; padding: 6px 9px; min-height: 30px; letter-spacing: 0.04em; border-radius: 4px; line-height: 1.2; }
+      .radar-wrap { width: 100%; overflow: hidden; }
+      .radar-svg { width: 100% !important; height: auto !important; max-width: 100% !important; }
+      .radar-legend { gap: 8px 12px; margin-top: 10px; }
+      .radar-legend-item { font-size: 10px; }
 
-      .radar-toggle {
-        font-size: 12px;
-        padding: 12px 10px;
-        min-height: 44px;
-        letter-spacing: 0.04em;
-        border-radius: 8px;
-        line-height: 1.2;
-      }
+      /* Heatmap (format korundu, sadece spacing) */
+      .hm-row { padding: 14px 0; }
+      .hm-row-header { margin-bottom: 8px; }
+      .hm-bank-name { font-size: 13px; }
+      .hm-total { font-size: 12px; }
+      .hm-bars { gap: 7px; }
+      .hm-bar-label { font-size: 9px; width: 60px; }
+      .hm-bar-track { height: 7px; border-radius: 3px; }
+      .hm-bar-val { font-size: 10px; width: 18px; }
 
-      .radar-wrap {
-        width: 100%;
-        overflow: hidden;
-      }
+      /* ── BANK CARDS ── */
+      .banks-grid { gap: 2px; margin-bottom: 20px; background: var(--border); border: 1px solid var(--border); }
+      .bank-card { padding: 16px 14px; border-radius: 0; border: none; background: var(--surface); box-shadow: none; }
+      .bank-header { margin-bottom: 14px; gap: 8px; flex-direction: column; align-items: flex-start; }
+      .bank-header>div:first-child { width: 100%; }
+      .score-badge { position: absolute; top: 16px; right: 14px; flex-direction: column; align-items: flex-end; }
+      .bank-name { font-size: 17px; margin-top: 2px; padding-right: 60px; line-height: 1.2; }
+      .score-num { font-size: 28px; }
+      .score-max { font-size: 10px; }
+      .bank-meta { gap: 6px; margin-top: 6px; line-height: 1.4; justify-content: flex-start; }
+      .error-bars { gap: 8px; margin-bottom: 14px; }
+      .bar-label { width: 72px; font-size: 9px; }
+      .bar-track { height: 6px; border-radius: 3px; }
+      .bar-count { font-size: 10px; width: 20px; }
+      .insight-label { font-size: 9px; margin-bottom: 5px; }
+      .insight-text { font-size: 12px; line-height: 1.65; }
+      .expand-btn { font-size: 10px; padding: 10px 0; width: 100%; justify-content: center; background: var(--surface2); border-radius: 4px; letter-spacing: 0.06em; }
+      .card-actions { gap: 8px; margin-top: 10px; flex-direction: column; }
+      .card-actions .expand-btn { width: 100%; box-sizing: border-box; }
+      .detail-panel { margin-top: 16px; padding-top: 16px; }
+      .insight-block { margin-bottom: 14px; }
 
-      .radar-svg {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-      }
-
-      .radar-legend {
-        gap: 12px 16px;
-        margin-top: 20px;
-      }
-
-      .radar-legend-item {
-        font-size: 13px;
-      }
-
-      /* Heatmap Mobile */
-      .hm-row {
-        padding: 20px 0;
-      }
-
-      .hm-row-header {
-        margin-bottom: 12px;
-      }
-
-      .hm-bank-name {
-        font-size: 16px;
-      }
-
-      .hm-total {
-        font-size: 15px;
-      }
-
-      .hm-bars {
-        gap: 10px;
-      }
-
-      .hm-bar-label {
-        font-size: 11px;
-        width: 75px;
-      }
-
-      .hm-bar-track {
-        height: 10px;
-        border-radius: 5px;
-      }
-
-      .hm-bar-val {
-        font-size: 13px;
-        width: 24px;
-      }
-
-      /* Bank cards */
-      .banks-grid {
-        gap: 16px;
-        margin-bottom: 32px;
-        background: transparent;
-        border: none;
-      }
-
-      .bank-card {
-        padding: 24px 16px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--surface);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      }
-
-      .bank-header {
-        margin-bottom: 24px;
-        gap: 12px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .bank-header>div:first-child {
-        width: 100%;
-      }
-
-      .score-badge {
-        position: absolute;
-        top: 24px;
-        right: 16px;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-
-      .bank-name {
-        font-size: 22px;
-        margin-top: 4px;
-        padding-right: 70px;
-        line-height: 1.2;
-      }
-
-      .score-num {
-        font-size: 36px;
-      }
-
-      .score-max {
-        font-size: 12px;
-      }
-
-      .bank-meta {
-        gap: 10px;
-        margin-top: 10px;
-        line-height: 1.5;
-        justify-content: flex-start;
-      }
-
-      .error-bars {
-        gap: 14px;
-        margin-bottom: 24px;
-      }
-
-      .bar-label {
-        width: 90px;
-        font-size: 11px;
-      }
-
-      .bar-track {
-        height: 10px;
-        border-radius: 5px;
-      }
-
-      .bar-count {
-        font-size: 13px;
-        width: 28px;
-      }
-
-      .insight-label {
-        font-size: 11px;
-        margin-bottom: 8px;
-      }
-
-      .insight-text {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .expand-btn {
-        font-size: 13px;
-        padding: 14px 0;
-        width: 100%;
-        justify-content: center;
-        background: var(--surface2);
-        border-radius: 8px;
-      }
-
-      .card-actions {
-        gap: 12px;
-        margin-top: 16px;
-        flex-direction: column;
-      }
-
-      .card-actions .expand-btn {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .detail-panel {
-        margin-top: 24px;
-        padding-top: 24px;
-      }
-
-      .insight-block {
-        margin-bottom: 24px;
-      }
-
-      /* Filter */
+      /* ── FILTER BAR ── */
       .filter-bar {
-        gap: 10px;
-        margin-bottom: 20px;
-        overflow-x: auto;
-        padding-bottom: 12px;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-        margin-left: -16px;
-        margin-right: -16px;
-        padding-left: 16px;
-        padding-right: 16px;
+        gap: 6px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px;
+        flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+        margin-left: -14px; margin-right: -14px; padding-left: 14px; padding-right: 14px;
       }
+      .filter-bar::-webkit-scrollbar { display: none; }
+      .filter-btn { padding: 6px 14px; font-size: 9px; white-space: nowrap; border-radius: 20px; letter-spacing: 0.05em; }
+      .filter-label { display: none; }
 
-      .filter-bar::-webkit-scrollbar {
-        display: none;
-      }
+      /* ── COMPARE ── */
+      .compare-modal { padding: 14px; background: rgba(240, 242, 241, 0.98); }
+      .compare-inner { padding: 14px 0; }
+      .compare-title { font-size: 18px; }
+      .compare-header { flex-direction: row; align-items: center; gap: 12px; margin-bottom: 16px; }
+      .close-btn { padding: 8px 14px; font-size: 9px; border-radius: 4px; width: auto; border-color: var(--border); background: var(--surface); }
+      .compare-grid { gap: 2px; background: var(--border); border: 1px solid var(--border); }
+      .compare-col { padding: 14px 12px; border-radius: 0; border: none; box-shadow: none; background: var(--surface); }
+      .c-bank-name { font-size: 15px; }
+      .c-score { font-size: 34px; }
+      .c-section { font-size: 9px; }
+      .c-text { font-size: 11px; line-height: 1.6; }
+      .compare-bar-label { width: 64px; font-size: 9px; }
+      .compare-bar-track { height: 6px; border-radius: 3px; }
+      .compare-bar-val { font-size: 10px; width: 20px; }
 
-      .filter-btn {
-        padding: 10px 20px;
-        font-size: 13px;
-        white-space: nowrap;
-        border-radius: 24px;
-      }
+      /* ── REVIEWS ── */
+      .reviews-section { margin-top: 16px; padding-top: 14px; }
+      .reviews-label { font-size: 9px; margin-bottom: 10px; }
+      .review-card { padding: 12px; border-radius: 4px; margin-bottom: 6px; }
+      .review-text { font-size: 11px; line-height: 1.55; margin-top: 8px; }
+      .review-kat { font-size: 9px; padding: 3px 7px; border-radius: 3px; }
+      .review-stars { font-size: 11px; }
 
-      .filter-label {
-        font-size: 13px;
-        display: none;
-      }
-
-      /* Compare */
-      .compare-modal {
-        padding: 16px;
-        background: rgba(240, 242, 241, 0.98);
-      }
-
-      .compare-inner {
-        padding: 24px 0;
-      }
-
-      .compare-title {
-        font-size: 24px;
-      }
-
-      .compare-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 24px;
-      }
-
-      .close-btn {
-        padding: 14px 20px;
-        font-size: 13px;
-        border-radius: 8px;
-        width: 100%;
-        text-align: center;
-        display: block;
-        border-color: var(--border);
-        background: var(--surface);
-      }
-
-      .compare-grid {
-        gap: 16px;
-        background: transparent;
-        border: none;
-      }
-
-      .compare-col {
-        padding: 24px 20px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        background: var(--surface);
-      }
-
-      .c-bank-name {
-        font-size: 20px;
-      }
-
-      .c-score {
-        font-size: 44px;
-      }
-
-      .c-section {
-        font-size: 11px;
-      }
-
-      .c-text {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .compare-bar-label {
-        width: 85px;
-        font-size: 11px;
-      }
-
-      .compare-bar-track {
-        height: 10px;
-        border-radius: 5px;
-      }
-
-      .compare-bar-val {
-        font-size: 12px;
-        width: 28px;
-      }
-
-      /* Reviews */
-      .reviews-section {
-        margin-top: 28px;
-        padding-top: 24px;
-      }
-
-      .reviews-label {
-        font-size: 12px;
-        margin-bottom: 16px;
-      }
-
-      .review-card {
-        padding: 20px;
-        border-radius: 12px;
-        margin-bottom: 12px;
-      }
-
-      .review-text {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-top: 12px;
-      }
-
-      .review-kat {
-        font-size: 11px;
-        padding: 6px 10px;
-        border-radius: 6px;
-      }
-
-      .review-stars {
-        font-size: 14px;
-      }
-
-      /* Footer */
-      footer {
-        padding-top: 24px;
-        padding-bottom: 32px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-      }
-
-      .footer-note {
-        font-size: 12px;
-        line-height: 1.6;
-      }
-
-      .legend-pills {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .pill {
-        font-size: 12px;
-      }
+      /* ── FOOTER ── */
+      footer { padding-top: 16px; padding-bottom: 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+      .footer-note { font-size: 9px; line-height: 1.55; }
+      .legend-pills { flex-direction: row; flex-wrap: wrap; gap: 8px 14px; }
+      .pill { font-size: 9px; }
     }
 
     /* ── SMALL 400px ── */
