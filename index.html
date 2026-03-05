@@ -2580,45 +2580,37 @@
     function renderHeatmap() {
       const container = document.getElementById('heatmap-container');
       container.innerHTML = '';
-      const isMobile = window.innerWidth <= 600;
 
-      if (isMobile) {
-        // Mobil: her banka için bar satırı
-        banks.forEach(bank => {
-          const total = Object.values(bank.errors).reduce((a, b) => a + b, 0);
-          const churn = getChurnRisk(bank);
-          const div = document.createElement('div');
-          div.className = 'hm-row';
-          const barsHtml = CAT_KEYS.map((k, i) => {
-            const v = bank.errors[k]; if (!v) return '';
-            const pct = Math.round(v / Math.max(total, 1) * 100);
-            return `<div class="hm-bar-row"><span class="hm-bar-label" style="color:${CAT_HEX[i]}">${CAT_SHORT[i]}</span><div class="hm-bar-track"><div class="hm-bar-fill" style="width:${pct}%;background:${CAT_HEX[i]}44"></div></div><span class="hm-bar-val" style="color:${CAT_HEX[i]}">${v}</span></div>`;
-          }).join('');
-          div.innerHTML = `<div class="hm-row-header"><span class="hm-bank-name">${bank.name}</span><span class="hm-total" style="color:${total > 20 ? '#c0392b' : total > 14 ? '#d68910' : '#5a7a6a'}">${total}/30</span>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:8px;padding:2px 6px')}</div><div class="hm-bars">${barsHtml}</div>`;
-          container.appendChild(div);
-        });
-      } else {
-        // Masaüstü: tablo
-        const table = document.createElement('table'); table.className = 'heatmap';
-        const thead = document.createElement('thead'); const hRow = document.createElement('tr');
-        hRow.innerHTML = `<th class="bank-col">BANKA</th>`;
-        CAT_LABELS.forEach((l, i) => hRow.innerHTML += `<th style="color:${CAT_HEX[i]}">${CAT_SHORT[i].toUpperCase()}</th>`);
-        hRow.innerHTML += `<th>TOPLAM</th><th>CHURN</th>`;
-        thead.appendChild(hRow); table.appendChild(thead);
-        const tbody = document.createElement('tbody');
-        banks.forEach(bank => {
-          const tr = document.createElement('tr');
-          const total = Object.values(bank.errors).reduce((a, b) => a + b, 0);
-          const churn = getChurnRisk(bank);
-          let h = `<td class="bank-name-cell">${bank.name}</td>`;
-          CAT_KEYS.forEach(k => { const v = bank.errors[k]; h += `<td class="heat-cell" style="background:${heatBg(v, maxPerCat[k])};color:${heatTxt(v, maxPerCat[k])}">${v}</td>`; });
-          h += `<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total > 20 ? '#c0392b' : total > 14 ? '#d68910' : '#5a7a6a'}">${total}</td>`;
-          h += `<td>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:8px;padding:2px 7px')}</td>`;
-          tr.innerHTML = h; tbody.appendChild(tr);
-        });
-        table.appendChild(tbody);
-        container.appendChild(table);
+      const tableWrapper = document.createElement('div');
+      tableWrapper.style.overflowX = 'auto';
+      if (window.innerWidth <= 600) {
+        tableWrapper.style.paddingBottom = '16px';
+        tableWrapper.style.margin = '0 -16px';
+        tableWrapper.style.paddingLeft = '16px';
+        tableWrapper.style.paddingRight = '16px';
+        tableWrapper.style.webkitOverflowScrolling = 'touch';
       }
+
+      const table = document.createElement('table'); table.className = 'heatmap';
+      const thead = document.createElement('thead'); const hRow = document.createElement('tr');
+      hRow.innerHTML = `<th class="bank-col">BANKA</th>`;
+      CAT_LABELS.forEach((l, i) => hRow.innerHTML += `<th style="color:${CAT_HEX[i]}">${CAT_SHORT[i].toUpperCase()}</th>`);
+      hRow.innerHTML += `<th>TOPLAM</th><th>CHURN</th>`;
+      thead.appendChild(hRow); table.appendChild(thead);
+      const tbody = document.createElement('tbody');
+      banks.forEach(bank => {
+        const tr = document.createElement('tr');
+        const total = Object.values(bank.errors).reduce((a, b) => a + b, 0);
+        const churn = getChurnRisk(bank);
+        let h = `<td class="bank-name-cell">${bank.name}</td>`;
+        CAT_KEYS.forEach(k => { const v = bank.errors[k]; h += `<td class="heat-cell" style="background:${heatBg(v, maxPerCat[k])};color:${heatTxt(v, maxPerCat[k])}">${v}</td>`; });
+        h += `<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total > 20 ? '#c0392b' : total > 14 ? '#d68910' : '#5a7a6a'}">${total}</td>`;
+        h += `<td>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:9px;padding:4px 8px;border-radius:4px')}</td>`;
+        tr.innerHTML = h; tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      tableWrapper.appendChild(table);
+      container.appendChild(tableWrapper);
     }
     renderHeatmap();
     window.addEventListener('resize', () => renderHeatmap());
