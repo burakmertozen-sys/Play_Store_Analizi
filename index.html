@@ -125,7 +125,8 @@
   .heatmap tr:hover td.bank-name-cell{color:var(--accent);}
 
   /* HEATMAP — mobil bar kartları */
-  .hm-row{padding:10px 0;border-bottom:1px solid var(--border);}
+  .heat-mobile{background:var(--surface);}
+  .hm-row{padding:10px 0;border-bottom:1px solid var(--border);background:var(--surface);}
   .hm-row:last-child{border-bottom:none;}
   .hm-row-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
   .hm-bank-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;flex:1;}
@@ -238,10 +239,8 @@
     .overview-strip{grid-template-columns:repeat(3,1fr);}
   }
 
-  /* ── TABLET 900px ── */
-  @media(max-width:1100px){
-    .chart-grid{grid-template-columns:1fr;}
-  }
+  /* ── TABLET ── */
+  @media(max-width:1100px){.chart-grid{grid-template-columns:1fr;}}
   @media(max-width:900px){
     .container{padding:0 20px 60px;}
     .banks-grid{grid-template-columns:1fr;}
@@ -249,139 +248,125 @@
     header{flex-direction:column;align-items:flex-start;padding:28px 0 24px;gap:16px;}
     .header-right{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:16px;}
     .total-banks{font-size:52px;}
-    .header-btns{justify-content:flex-start;margin-top:0;flex:1;justify-content:flex-end;}
+    .header-btns{justify-content:flex-end;margin-top:0;flex:1;}
   }
 
   /* ── MOBILE 600px ── */
   @media(max-width:600px){
-    .container{padding:0 12px 48px;}
-    header{padding:20px 0 18px;gap:12px;}
-    h1{font-size:24px;}
-    .tag{font-size:9px;margin-bottom:10px;}
-    .header-meta{font-size:10px;}
-    .total-banks{font-size:40px;}
-    .total-label{font-size:10px;}
-    .header-btns{gap:6px;}
-    .hdr-btn{padding:8px 12px;font-size:9px;gap:5px;}
-    .hdr-btn svg{width:12px;height:12px;}
+    .container{padding:0 12px 40px;}
+    header{padding:16px 0 12px;gap:10px;margin-bottom:16px;}
+    h1{font-size:20px;}
+    .tag{font-size:8px;margin-bottom:6px;letter-spacing:0.12em;}
+    .header-meta{font-size:9px;}
+    .total-banks{font-size:32px;}
+    .total-label{font-size:9px;}
+    .header-btns{gap:5px;}
+    .hdr-btn{padding:6px 10px;font-size:8px;gap:4px;}
+    .hdr-btn svg{width:10px;height:10px;}
 
-    /* Overview — 2x2 grid + last card full width */
-    .overview-strip{
-      grid-template-columns:1fr 1fr;
-      grid-template-rows:auto auto auto;
-      gap:1px;
-      margin-bottom:24px;
-    }
-    .overview-card:nth-child(5){
-      grid-column:1/-1;
-    }
-    .overview-card{padding:14px 13px;}
-    .ov-label{font-size:8px;margin-bottom:7px;letter-spacing:0.1em;}
-    .ov-value{font-size:22px;}
-    .ov-sub{font-size:9px;margin-top:5px;}
+    /* Overview */
+    .overview-strip{grid-template-columns:1fr 1fr;gap:1px;margin-bottom:16px;}
+    .overview-card:nth-child(5){grid-column:1/-1;}
+    .overview-card{padding:11px 10px;}
+    .ov-label{font-size:7px;margin-bottom:4px;letter-spacing:0.08em;}
+    .ov-value{font-size:17px;}
+    .ov-sub{font-size:8px;margin-top:3px;gap:2px;}
 
-    /* Tooltip — bottom sheet on mobile */
-    .yön-tip{
-      position:fixed;bottom:0;left:0;right:0;top:auto;
-      transform:none;width:100%;max-width:100%;
-      border-radius:14px 14px 0 0;
-      padding:20px 18px 36px;
-      font-size:11px;line-height:1.7;
-      z-index:10000;
-      box-shadow:0 -4px 32px rgba(0,0,0,0.25);
-    }
+    /* Tooltip bottom sheet */
+    .yön-tip{position:fixed;bottom:0;left:0;right:0;top:auto;transform:none;width:100%;border-radius:14px 14px 0 0;padding:16px 14px 30px;font-size:11px;line-height:1.6;z-index:10000;box-shadow:0 -4px 32px rgba(0,0,0,0.25);}
     .yön-tip::before{display:none;}
-
-    /* Section */
-    .section-title{font-size:10px;letter-spacing:0.1em;margin-bottom:14px;}
-
-    /* Ranking */
-    .ranking-table{margin-bottom:24px;border:1px solid var(--border);}
-
-    /* Charts */
-    .chart-grid{gap:1px;margin-bottom:24px;}
-    .chart-card{padding:14px 12px;}
-    .chart-title{font-size:11px;margin-bottom:12px;}
-
-    /* Donut - kompakt yatay */
-    .donut-wrapper{flex-direction:row;align-items:center;gap:14px;justify-content:flex-start;flex-wrap:nowrap;}
-    .donut-svg{width:100px!important;height:100px!important;flex-shrink:0;}
-    .legend{min-width:unset;flex:1;gap:6px;}
-    .legend-item{gap:6px;}
-    .legend-dot{width:7px;height:7px;}
-    .legend-text{font-size:9px;}
-    .legend-val{font-size:11px;}
-    .legend-pct{font-size:8px;}
-
-    /* Heatmap — tablo gizle, bar kartlar göster */
-    .heatmap-wrap{display:none;}
-    .heat-mobile{display:block;}
-
-    /* Radar — tam genişlik, scroll yok */
-    .radar-controls{gap:4px;margin-bottom:10px;}
-    .radar-toggle{font-size:8px;padding:5px 10px;min-height:32px;}
-    .radar-wrap{width:100%;overflow:hidden;}
-    .radar-svg{width:100%!important;height:auto!important;max-width:100%!important;min-width:0!important;}
-    .radar-legend{gap:5px 10px;margin-top:8px;}
-    .radar-legend-item{font-size:9px;}
-
-    /* Bank cards */
-    .banks-grid{gap:1px;margin-bottom:24px;}
-    .bank-card{padding:16px;}
-    .bank-name{font-size:17px;}
-    .score-num{font-size:28px;}
-    .score-max{font-size:10px;}
-    .bank-meta{gap:6px;}
-    .bar-label{width:90px;font-size:8px;}
-    .bar-count{font-size:9px;}
-    .insight-text{font-size:11px;line-height:1.7;}
-    .expand-btn{font-size:9px;}
-
-    /* Filter */
-    .filter-bar{gap:5px;margin-bottom:14px;flex-wrap:wrap;}
-    .filter-btn{padding:5px 10px;font-size:8px;}
-    .filter-label{font-size:8px;}
-
-    /* Churn badge tooltip */
-    .churn-badge .churn-tip{
-      position:fixed;bottom:0;left:0;right:0;top:auto;
-      transform:none;width:100%;
-      border-radius:14px 14px 0 0;
-      padding:20px 18px 36px;
-      font-size:11px;line-height:1.7;
-      z-index:10000;
-      box-shadow:0 -4px 32px rgba(0,0,0,0.25);
-    }
+    .churn-badge .churn-tip{position:fixed;bottom:0;left:0;right:0;top:auto;transform:none;width:100%;border-radius:14px 14px 0 0;padding:16px 14px 30px;font-size:11px;line-height:1.6;z-index:10000;box-shadow:0 -4px 32px rgba(0,0,0,0.25);}
     .churn-badge .churn-tip::before{display:none;}
 
-    /* Compare modal */
-    .compare-modal{padding:16px 12px;}
-    .compare-title{font-size:18px;}
+    /* Section */
+    .section-title{font-size:9px;letter-spacing:0.1em;margin-bottom:10px;}
+
+    /* Ranking */
+    .ranking-table{margin-bottom:16px;}
+
+    /* Charts */
+    .chart-grid{gap:1px;margin-bottom:16px;}
+    .chart-card{padding:12px 10px;}
+    .chart-title{font-size:10px;margin-bottom:10px;letter-spacing:0;}
+
+    /* Donut */
+    .donut-wrapper{flex-direction:row;align-items:center;gap:10px;justify-content:flex-start;flex-wrap:nowrap;}
+    .donut-svg{width:88px!important;height:88px!important;flex-shrink:0;}
+    .legend{min-width:unset;flex:1;gap:5px;}
+    .legend-item{gap:5px;}
+    .legend-dot{width:6px;height:6px;}
+    .legend-text{font-size:9px;}
+    .legend-val{font-size:10px;}
+    .legend-pct{font-size:8px;}
+
+    /* Heatmap — masaüstü tablo gizle, mobil barlar göster */
+    .heatmap-wrap{display:none!important;}
+    .heat-mobile{display:block!important;}
+
+    /* Radar */
+    .radar-controls{gap:3px;margin-bottom:8px;}
+    .radar-toggle{font-size:7px;padding:4px 7px;min-height:26px;letter-spacing:0.04em;}
+    .radar-wrap{width:100%;overflow:hidden;}
+    .radar-svg{width:100%!important;height:auto!important;max-width:100%!important;min-width:0!important;}
+    .radar-legend{gap:4px 8px;margin-top:6px;}
+    .radar-legend-item{font-size:8px;}
+
+    /* Bank cards */
+    .banks-grid{gap:1px;margin-bottom:16px;}
+    .bank-card{padding:12px 11px;}
+    .bank-header{margin-bottom:12px;gap:10px;}
+    .bank-name{font-size:14px;}
+    .score-num{font-size:22px;}
+    .score-max{font-size:9px;}
+    .bank-meta{gap:4px;margin-top:3px;}
+    .error-bars{gap:5px;margin-bottom:12px;}
+    .bar-label{width:68px;font-size:7.5px;}
+    .bar-track{height:4px;}
+    .bar-count{font-size:8px;}
+    .insight-label{font-size:7.5px;}
+    .insight-text{font-size:10px;line-height:1.6;}
+    .expand-btn{font-size:8px;}
+    .card-actions{gap:8px;margin-top:4px;}
+    .detail-panel{margin-top:16px;padding-top:16px;}
+    .insight-block{margin-bottom:14px;}
+
+    /* Filter */
+    .filter-bar{gap:4px;margin-bottom:10px;}
+    .filter-btn{padding:4px 8px;font-size:7.5px;}
+    .filter-label{font-size:7.5px;}
+
+    /* Compare */
+    .compare-modal{padding:12px 10px;}
+    .compare-title{font-size:15px;}
     .compare-grid{grid-template-columns:1fr!important;}
-    .compare-col{padding:18px;}
-    .c-bank-name{font-size:16px;}
-    .c-score{font-size:40px;}
-    .close-btn{padding:7px 12px;font-size:9px;}
+    .compare-col{padding:12px;}
+    .c-bank-name{font-size:13px;}
+    .c-score{font-size:32px;}
+    .close-btn{padding:5px 10px;font-size:8px;}
+
+    /* Reviews */
+    .reviews-section{margin-top:16px;padding-top:14px;}
+    .review-card{padding:9px 10px;}
+    .review-text{font-size:10px;line-height:1.55;}
+    .review-kat{font-size:7px;}
 
     /* Footer */
-    footer{padding-top:20px;}
-    .footer-note{font-size:9px;line-height:1.6;}
-
-    /* Review cards */
-    .review-text{font-size:11px;}
-    .review-kat{font-size:8px;}
+    footer{padding-top:14px;}
+    .footer-note{font-size:8px;line-height:1.5;}
   }
 
   /* ── SMALL 400px ── */
   @media(max-width:400px){
-    .container{padding:0 10px 40px;}
-    .ov-value{font-size:19px;}
-    h1{font-size:21px;}
-    .total-banks{font-size:34px;}
-    .bank-card{padding:14px;}
-    .bank-name{font-size:15px;}
-    .filter-btn{padding:4px 8px;font-size:7.5px;}
-    .heatmap th,.heatmap td{padding:7px 8px;font-size:9px;}
+    .container{padding:0 10px 32px;}
+    h1{font-size:18px;}
+    .total-banks{font-size:28px;}
+    .ov-value{font-size:15px;}
+    .overview-card{padding:9px 8px;}
+    .bank-card{padding:10px 9px;}
+    .bank-name{font-size:13px;}
+    .score-num{font-size:20px;}
+    .filter-btn{padding:3px 6px;font-size:7px;}
+    .hdr-btn{padding:5px 8px;font-size:7.5px;}
   }
 </style>
 </head>
