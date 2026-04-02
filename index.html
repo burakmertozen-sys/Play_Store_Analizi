@@ -551,6 +551,17 @@
       background: var(--surface);
       padding: 28px 24px;
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .donut-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
     }
 
     .chart-card.full {
@@ -566,13 +577,6 @@
     }
 
     /* DONUT */
-    .donut-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
 
     .donut-svg {
       flex-shrink: 0;
@@ -583,37 +587,37 @@
     .legend {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      min-width: 140px;
+      gap: 14px;
+      min-width: 180px;
     }
 
     .legend-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .legend-dot {
-      width: 8px;
-      height: 8px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     .legend-text {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--muted);
       flex: 1;
     }
 
     .legend-val {
       font-family: 'Syne', sans-serif;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
     }
 
     .legend-pct {
-      font-size: 10px;
+      font-size: 12px;
       color: var(--muted);
       margin-left: 2px;
     }
@@ -2223,7 +2227,7 @@
     <div class="overview-strip">
       <div class="overview-card yön-card">
         <div class="ov-label">En İyi YZ Skoru</div>
-        <div class="ov-value" style="color:var(--good)">2.97</div>
+        <div class="ov-value" style="color:var(--good)">2.60</div>
         <div class="ov-sub" style="display:flex;align-items:center;gap:4px">ING Mobil · Store 4.8 ★ <span
             style="font-size:9px;color:var(--accent);border:1px solid var(--accent);border-radius:50%;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">?</span>
         </div>
@@ -2232,37 +2236,35 @@
           <div style="margin-bottom:12px;color:#c8ddd4;">Son 30 Play Store yorumu Sonnet 4.6 ve Gemini Flash 1.5
             tarafından okunarak giriş, sistem, UX, destek ve onboarding kategorilerinde analiz edilir. Her yorumdaki
             şikayet yoğunluğu, dil tonu ve konu dağılımına göre 5 üzerinden puan üretilir.</div>
-          <div style="margin-bottom:8px;color:#1a9c5b;font-weight:600">✦ ING Mobil — 2.97 / 5.0</div>
+          <div style="margin-bottom:8px;color:#1a9c5b;font-weight:600">✦ ING Mobil — 2.60 / 5.0</div>
           <div style="color:#c8ddd4;">8 banka içinde en yüksek YZ skoruna sahip. YZ modeli düşük hata yoğunluğu ve
             olumlu kullanıcı tonu tespit etti. Store puanıyla (4.8) uyumlu seyir gösteriyor.</div>
         </div>
       </div>
       <div class="overview-card yön-card">
         <div class="ov-label">En Düşük YZ Skoru</div>
-        <div class="ov-value" style="color:var(--danger)">1.43</div>
-        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">Ziraat Mobil · Store 4.3 ★ <span
+        <div class="ov-value" style="color:var(--danger)">1.57</div>
+        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">İşCep · Store 4.2 ★ <span
             style="font-size:9px;color:var(--accent);border:1px solid var(--accent);border-radius:50%;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">?</span>
         </div>
         <div class="yön-tip">
           <div style="margin-bottom:10px;color:#c0392b;font-weight:600">⚠ Kritik YZ Skoru Eşiği</div>
-          <div style="margin-bottom:12px;color:#c8ddd4;">1.4 / 5.0, analiz edilen bankalar arasında en düşük YZ
+          <div style="margin-bottom:12px;color:#c8ddd4;">1.57 / 5.0, analiz edilen bankalar arasında en düşük YZ
             skorudur. YZ modeli bu bankada yüksek şikayet yoğunluğu, tekrarlayan hata örüntüleri ve olumsuz kullanıcı
             tonu tespit etti. 2.0 altı skorlar kritik müdahale eşiğini ifade eder.</div>
-          <div style="margin-bottom:8px;color:#c0392b;font-weight:600">✦ Ziraat Mobil — 1.4 / 5.0</div>
-          <div style="color:#c8ddd4;">30 yorumun 27'si YZ tarafından düşük puanlı sınıflandırıldı. Sistem hataları (%30)
-            ve UX sorunları (%33) baskın kategoriler. Store puanı (4.3) ile YZ skoru (1.4) arasındaki 2.9 puanlık uçurum
-            en büyük tutarsızlık.</div>
+          <div style="margin-bottom:8px;color:#c0392b;font-weight:600">✦ İşCep — 1.57 / 5.0</div>
+          <div style="color:#c8ddd4;">30 yorumun 26'sı YZ tarafından düşük puanlı sınıflandırıldı. UX sorunları (%63) baskın kategori. Store puanı (4.2) ile YZ skoru (1.57) arasındaki 2.63 puanlık uçurum en büyük tutarsızlıklardan biri.</div>
         </div>
       </div>
       <div class="overview-card yön-card">
         <div class="ov-label">Ortalama YZ Skoru</div>
-        <div class="ov-value" style="color:var(--warning)">2.10</div>
-        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">8 Bankadan · QNB Hariç <span
+        <div class="ov-value" style="color:var(--warning)">2.01</div>
+        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">8 Bankadan · Tüm Bankalar <span
             style="font-size:9px;color:var(--accent);border:1px solid var(--accent);border-radius:50%;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">?</span>
         </div>
         <div class="yön-tip">
           <div style="margin-bottom:10px;color:#d68910;font-weight:600">📉 Sektör YZ Ortalaması</div>
-          <div style="margin-bottom:12px;color:#c8ddd4;">2.2 / 5.0, YZ modellerinin 8 bankayı değerlendirmesi sonucu
+          <div style="margin-bottom:12px;color:#c8ddd4;">2.01 / 5.0, YZ modellerinin 8 bankayı değerlendirmesi sonucu
             elde edilen sektör ortalamasıdır. Her bankanın 30 yorumu bağımsız olarak analiz edilip birleştirilmiştir.
             QNB veri bulunmadığı için hesaplama dışı tutulmuştur.</div>
           <div style="margin-bottom:8px;color:#d68910;font-weight:600">✦ YZ Skor Bantları</div>
@@ -2272,20 +2274,20 @@
         </div>
       </div>
       <div class="overview-card yön-card">
-        <div class="ov-label">Yüksek Churn Riski</div>
-        <div class="ov-value" style="color:var(--danger)">5</div>
-        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">Banka Acil Müdahale Gerektirir <span
+        <div class="ov-label">Orta Churn Riski</div>
+        <div class="ov-value" style="color:var(--warning)">8</div>
+        <div class="ov-sub" style="display:flex;align-items:center;gap:4px">Banka · Önleyici Aksiyon Gerekli <span
             style="font-size:9px;color:var(--accent);border:1px solid var(--accent);border-radius:50%;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">?</span>
         </div>
         <div class="yön-tip">
-          <div style="margin-bottom:10px;color:#c0392b;font-weight:600">⚠ Churn Riski Nasıl Hesaplanır?</div>
+          <div style="margin-bottom:10px;color:#d68910;font-weight:600">● Churn Riski Nasıl Hesaplanır?</div>
           <div style="margin-bottom:14px;color:#c8ddd4;">YZ Skoru ile Store Rating arasındaki fark, düşük puanlı yorum
             oranı ve genel skor düzeyi birleştirilerek YZ tarafından hesaplanır.</div>
           <div style="margin-bottom:14px;color:#c8ddd4;"><b style="color:#c0392b">Yüksek:</b> YZ, kritik düzeyde şikayet
             yoğunluğu ve Store puanı ile YZ skoru arasında derin uçurum tespit etti. Aktif kullanıcı kaybı riski yüksek.
           </div>
           <div style="margin-bottom:14px;color:#c8ddd4;"><b style="color:#d68910">Orta:</b> YZ belirgin sorun sinyalleri
-            aldı ancak henüz kritik eşiğe ulaşmadı. Önleyici iyileştirmeler planlanmalı.</div>
+            aldı ancak henüz kritik eşiğe ulaşmadı. Tüm bankalar bu dönemde orta seviyede seyrediyor — önleyici iyileştirmeler planlanmalı.</div>
           <div style="color:#c8ddd4;"><b style="color:#1a9c5b">Düşük:</b> YZ skoru ile Store puanı dengeli seyrediyor.
             Kullanıcı deneyimi görece stabil.</div>
         </div>
@@ -2330,8 +2332,8 @@
       <div class="chart-card">
         <div class="chart-title">Toplam Hata Dağılımı · Kategori Bazlı</div>
         <div class="donut-wrapper">
-          <svg class="donut-svg" width="180" height="180" viewBox="0 0 180 180"
-            style="flex-shrink:0;max-width:180px;width:100%;" id="donut-svg"></svg>
+          <svg class="donut-svg" width="400" height="400" viewBox="0 0 400 400"
+            style="flex-shrink:0;max-width:400px;width:100%;" id="donut-svg"></svg>
           <div class="legend" id="donut-legend"></div>
         </div>
       </div>
@@ -2380,98 +2382,107 @@
   <script>
     const banks = [
       {
-        name: "Ziraat Mobil", storeRating: 4.3, score: 1.43, totalLow: 27, errors: { login: 10, onboard: 3, system: 9, support: 1, ux: 4 },
-        durum: "Ziraat Mobil uygulaması müşteri geri bildirimlerine göre ciddi operasyonel friksiyon yaşamaktadır. Özellikle giriş/yetkilendirme süreçleri, sistem hataları ve müşteri hizmetleri etkileşimlerinde yüksek oranda olumsuzluk gözlenmektedir.",
-        friksiyon: "Kullanıcıların temel bankacılık işlemlerini (giriş, şifre değişikliği, para transferi, ödeme) dahi sorunsuz gerçekleştirememesi ve karşılaştıkları sorunlarda etkili destek alamaması temel hayal kırıklığı kaynağıdır.",
-        tavsiye: "Mobil uygulama altyapısı acilen revizyondan geçirilmeli, giriş/yetkilendirme modülleri ve temel işlem akışları yeniden tasarlanmalıdır. Müşteri destek kanalları mobil uygulama ile entegre edilmeli, kullanıcı testleri artırılmalıdır.",
+        name: "Ziraat Mobil", storeRating: 4.3, score: 2.03, totalLow: 25, errors: { login: 6, onboard: 5, system: 9, support: 3, ux: 7 },
+        durum: "Ziraat Mobil, kullanıcı deneyiminde ciddi operasyonel friksiyonlar yaşamaktadır. Uygulama, sıkça meydana gelen sistem hataları ve güncellemelerle ilgili sorunlar nedeniyle kullanıcıların temel bankacılık işlemlerini dahi tamamlamasını engellemektedir. Cihaz onayı ve SIM kart bloke kaldırma gibi kritik KYC ve giriş süreçlerindeki aksaklıklar, dijital penetrasyonu olumsuz etkilemektedir.",
+        friksiyon: "Kullanıcıların en büyük hayal kırıklığı kaynağı, uygulamanın sürekli olarak 'güncelleme yapın' uyarısı vermesine rağmen güncel olması ve işlem yapmayı engellemesi ile NFC ile kimlik doğrulama, SIM bloke kaldırma gibi onboarding ve giriş süreçlerindeki tutarsızlık ve hatalardır. Bu durum, temel bankacılık işlemlerine erişimi bloke ederek ciddi bir operasyonel aksaklık yaratmaktadır.",
+        tavsiye: "Güçlü bir teknik altyapı revizyonu ve QA süreçlerinin iyileştirilmesi önceliklidir. Kullanıcıların sıklıkla karşılaştığı güncelleme döngüsü, cihaz onayı ve kimlik doğrulama hatalarının giderilmesi, kritik iş akışlarının kesintisizliğini sağlayacaktır. Dijital kanallardan çözülemeyen işlemler için müşteri hizmetleri entegrasyonu ve şube bağımlılığının azaltılması için otomasyonun artırılması gerekmektedir.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Tam 5 kere şifre değistirtti bana, her seferinde hatalı giriş sebebiyle kilitlendi mesajı geldi." },
-          { kategori: "onboard", yildiz: 2, metin: "Gelir bilgimizi güncelleyemiyoruz, bu yüzden kaç yıl oldu kredi kartı limiti artmıyor." },
-          { kategori: "system", yildiz: 1, metin: "Mobil uygulamadan hisse alamıyorum. Yatırım hesabı da açtım, oraya havale yaptım, hisse alıştan giriyorum bakiye yok görünüyor." },
-          { kategori: "support", yildiz: 1, metin: "Müşteri hizmetlerindeki tele sekreteri bile işe yaramıyor. Kart şifresi almak için arıyorum onu da gerçekleştiremiyor." },
-          { kategori: "ux", yildiz: 1, metin: "EFT için ücret alıyorsunuz! 'Bakiye yetersiz!' hata mesajı yerine 'İşlem ücretini gönderilen tutardan tahsil et' gibi seçenekle kullanıcı deneyiminde sınıf atlayabilirsiniz!" }
+          { kategori: "login", yildiz: 1, metin: "bir gündür uygulamaya girmeye çalışıyorum şifrem her şeyim doğru ancak şuanda istediğinizi gerçekleştiremiyoruz diyerekten beni uygulamadan dışarı atıyor. neden anlamadım buna bir çözüm bulun daha önce de olmuştu." },
+          { kategori: "onboard", yildiz: 1, metin: "O kadar işe yaramaz bir uygulama olmuş ki. Şubesiz işlemlerden SIM bloke kaldırmaya çalışıyorum ama son adımda her seferinde hata veriyor TC'yi okuyamadığı için işlemden atıyor." },
+          { kategori: "system", yildiz: 1, metin: "Güncelleme yaptım ancak sürekli olarak güncelleme yap diyerek kullanıcı girişine engel oluyor. İnanılmaz kötü. Delirmek üzereyim." },
+          { kategori: "support", yildiz: 1, metin: "bir müşteri temsilcisine bağlanabilmek için TC kimlik kart onayı mobil onayı kart şifresi vs. Bir hayli şeyler istiyor ama bağlanamıyorsun böyle bir rezalet bir sistem bir bankacılık yok sıfır..." },
+          { kategori: "ux", yildiz: 1, metin: "Mobil uygulamaya şifre her giriş yaptığımda bir bildirim geliyor. Kredi istiyor musun diyor. 'ilgilenmiyorum' seçeneğini işaretliyorum. fakat her girişte sormaya devam ediyor. madem bu düğme işe yaramıyor neden oraya koyuyorsunuz." }
         ]
       },
       {
-        name: "İşCep", storeRating: 4.2, score: 1.80, totalLow: 22, errors: { login: 4, onboard: 0, system: 7, support: 0, ux: 11 },
-        durum: "İşCep uygulaması güncellemelere rağmen kullanıcılar arasında ciddi operasyonel friksiyon yaratmakta; özellikle mobil borsa, arayüz performansı ve temel bankacılık işlemleri üzerinde olumsuz etki bırakmaktadır.",
-        friksiyon: "Mobil borsa ve genel arayüzde yapılan güncellemelerin kullanıcı alışkanlıklarını bozması, performansı düşürmesi ve mevcut özellikleri kısıtlaması en büyük şikayet konusudur.",
-        tavsiye: "Mobil uygulamanın performans ve stabilitesi artırılmalı. Özellikle mobil borsa modülü kullanıcı geri bildirimleri doğrultusunda yeniden tasarlanmalı. Aşırı bildirimler ve reklam pop-up'ları azaltılmalıdır.",
+        name: "İşCep", storeRating: 4.2, score: 1.57, totalLow: 26, errors: { login: 0, onboard: 2, system: 7, support: 2, ux: 19 },
+        durum: "İşCep uygulaması, güncellemeler sonrası UX/UI tasarımında gerileme ve sistem performansındaki düşüşlerle (donma, yavaşlama, çökme) karakterize edilen ciddi operasyonel sorunlar yaşamaktadır. Özellikle mobil borsa ve yatırım araçları arayüzündeki karmaşıklık, kullanıcıların temel finansal işlemlerini dahi zorlaştırmaktadır. Şube bağımlılığının devam etmesi, dijitalleşme hedeflerini sekteye uğratmaktadır.",
+        friksiyon: "Kullanıcıların en belirgin şikayet noktası, 'Mobil Borsa' ekranının son güncellemelerle birlikte işlevsiz ve karmaşık hale gelmesidir. Eski, sade arayüze dönüş talepleri oldukça yoğundur. Ayrıca, uygulamanın genel yavaşlığı, donmaları ve ara sıra meydana gelen çökmeler, kullanıcı memnuniyetini derinden etkilemektedir. Reklam ve bildirimlerin aşırı yoğunluğu da önemli bir friksiyon noktasıdır.",
+        tavsiye: "Mobil borsa uygulamasının kullanıcı dostu arayüzü ve performansı öncelikli olarak yeniden tasarlanmalıdır, mümkünse eski, daha beğenilen versiyonlara dönülmesi değerlendirilmelidir. Genel uygulama performansını iyileştirmek için teknik optimizasyonlar yapılmalı ve agresif reklam stratejileri gözden geçirilerek daha kişiselleştirilmiş ve izin bazlı bir bildirim sistemine geçilmelidir.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Uygulama sürekli hata veriyor. Şifremi kabul etmiyor. Diğer bankaların mobil uygulamaları arasında en sorunlu İş Bankası uygulaması." },
-          { kategori: "system", yildiz: 1, metin: "Her geçen gün güncellendikçe uygulama ağırlaştı, menüler arasındaki geçiş yavaşladı. Birkaç dakika kullandıktan sonra uygulama takılıyor, kapatıp tekrar açmak gerekiyor." },
-          { kategori: "ux", yildiz: 1, metin: "Uygulamayı bozdunuz güncellemelerle. Eskiden hisseyi kaça almışım kaça satmışım görebiliyordum, tüm hepsini sıra ile. Artık 15 günlük ile sınırladılar." }
+          { kategori: "onboard", yildiz: 1, metin: "Sözde güvenlik tedbiri, internet alışverişine kartı açıp kapatmak için kimlik kartı taramayı icat etmişsiniz. Denk getirip açana kadar yada uygulamaya kartı beğendirene kadar alışveriş hevesiniz kalmıyor." },
+          { kategori: "system", yildiz: 2, metin: "Açılması zaman alıyor, şifre girince ekran donuyor tekrar o şekilden çıkıp yeniden girmem gerekiyor." },
+          { kategori: "support", yildiz: 1, metin: "hemen her işlem için şubeye gitmemiz gerekiyor, şubeler de basit bir işlem için bile 1 saat bekliyoruz." },
+          { kategori: "ux", yildiz: 1, metin: "mobile borsa uygulaması güncellemeden sonra mahvedilmiş, acilen eskiye dönülmeli, işcepi güncelleme öncesine kadar iyiydi seviyorduk." },
+          { kategori: "ux", yildiz: 2, metin: "uygulamayı kullanırken ve kullanmazken gelen mesajlar ve tam bir tuşa basacakken çıkan reklamlar iyice tiksindirdi." }
         ]
       },
       {
-        name: "Garanti BBVA", storeRating: 4.6, score: 2.27, totalLow: 19, errors: { login: 5, onboard: 0, system: 6, support: 1, ux: 7 },
-        durum: "Garanti BBVA mobil uygulaması yüksek genel puanına rağmen son kullanıcı geri bildirimlerinde önemli operasyonel ve UX odaklı sorunlar içermektedir. Donmalar, performans düşüşleri ve giriş aksaklıkları kullanıcı memnuniyetini düşürmektedir.",
-        friksiyon: "Uygulamanın genel performans ve stabilitesi (donmalar, hatalı işlem uyarıları), giriş süreçlerindeki aksaklıklar ve kullanıcı deneyimini bozan unsurlar (ekran görüntüsü yasağı, sürekli reklamlar) en çok şikayet edilen noktalardır.",
-        tavsiye: "Mobil uygulamanın teknik altyapısı acil gözden geçirilmeli, donma ve hata sorunları giderilmelidir. Güvenlik süreçleri basitleştirilmeli, reklam stratejileri revize edilmeli, pil tüketimi gibi kritik teknik sorunlara çözüm bulunmalıdır.",
+        name: "Garanti BBVA", storeRating: 4.6, score: 1.83, totalLow: 24, errors: { login: 5, onboard: 4, system: 3, support: 5, ux: 13 },
+        durum: "Garanti BBVA mobil uygulaması, kullanıcıların temel bankacılık işlemlerine erişimini engelleyen ciddi login, kimlik doğrulama (NFC) ve sistemik hatalarla karşı karşıyadır. Müşteri hizmetlerine erişimdeki zorluklar ve şubeye yönlendirmeler, dijital kanallardaki operasyonel yetersizliği pekiştirmektedir. Bu durum, yüksek churn riski barındırmaktadır.",
+        friksiyon: "Uygulamanın temel işlevlerindeki (login, kimlik doğrulama, sim kart değişikliği) istikrarsızlık ve NFC özelliklerinin çalışmaması, kullanıcıları mobil bankacılıktan uzaklaştıran en kritik faktörlerdir. 'Beyaz ekran' sorunları ve müşteri hizmetlerine ulaşılamaması, operasyonel friksiyonu artırmaktadır.",
+        tavsiye: "NFC tabanlı kimlik doğrulama ve diğer hassas işlemlerin güvenilirliğini sağlamak için teknik iyileştirmeler acilen yapılmalıdır. 'Beyaz ekran' gibi sistem hatalarını ortadan kaldırmak için kapsamlı bir stabilizasyon çalışması başlatılmalıdır. Müşteri hizmetlerine erişilebilirliği artırmak ve mobil kanallardan çözülebilecek sorunlarda şube bağımlılığını en aza indirmek üzere bir dijital dönüşüm stratejisi benimsenmelidir.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Mobil şifremi unuttum, kartım yok, yeni kimlik kartı ile parola almaya girdiğimde kimliğimi okuduğu halde 'okunamadı' hatası veriyor." },
-          { kategori: "system", yildiz: 2, metin: "Hisse senedi portföyüm uzun zamandır açılmıyor. Devamlı 'şu anda işlem yapamıyoruz, lütfen daha sonra tekrar deneyin' yazısı çıkıyor." },
-          { kategori: "support", yildiz: 1, metin: "Görüntülü görüşme esnasında müşteri temsilcisi neden kamerasını açmadı? Çok merak ediyorum." },
-          { kategori: "ux", yildiz: 1, metin: "Neden sabık gibi sürekli reklam gönderiyorsunuz. Son bir haftadır beş reklam videosu gönderiyorsunuz. Berbat bir uygulama, uygulamadan her şeyi iptal ettik yine de beş reklam çıkıyor." }
+          { kategori: "login", yildiz: 1, metin: "Uygulamaya giriş yapamıyorum, hata veriyor. Bu durumu belirtmek için müşteri temsilcisini arıyorum fakat uygulamadan onaylamam için bildirim gönderiyor. uygulamaya girebilsem zaten sizi aramam." },
+          { kategori: "onboard", yildiz: 1, metin: "Diğer tüm bankaların mobil uygulamaları üzerinden en basitçe yapılabilen hiçbir işlem bu bankanın uygulaması üzerinden yapılamıyor. Nfc özelliği asla çalışmıyor." },
+          { kategori: "system", yildiz: 1, metin: "Bu son sürümde sorun yaşıyorum. 8 gün önce güncelleme yapıldıktan sonra beyaz ekran sorunu." },
+          { kategori: "support", yildiz: 3, metin: "müşteri hizmetlerine ulaşmak gerçekten çok büyük bir sabır istiyor, bazen herkes uygulamaya girerken bir tek sen giremiyorsun." },
+          { kategori: "ux", yildiz: 1, metin: "Kurumsal mobil bankacılık kullanımında sorun yaşıyorum 2 aydır vadesiz hesaplarda hesap hareketlerimizi göremiyoruz, ayrıntılı arama yapamıyoruz çünkü hesaplarımızın üzerine tıkladığımızda açılmıyor." }
         ]
       },
       {
-        name: "Akbank", storeRating: 4.7, score: 1.80, totalLow: 22, errors: { login: 4, onboard: 0, system: 7, support: 3, ux: 8 },
-        durum: "Akbank mobil uygulaması yüksek pazar puanına rağmen kullanıcı deneyimi ve temel işlevsellik açısından ciddi operasyonel aksaklıklar sergilemektedir. Giriş sorunları, sistem hataları ve müşteri hizmetlerinin yetersizliği büyük hayal kırıklığı yaratmaktadır.",
-        friksiyon: "Arayüz karmaşıklığı, temel işlemler için menü eksiklikleri ve navigasyon sorunları, fazla bildirim ve reklamlar kullanıcı deneyimini olumsuz etkileyen ana faktörlerdir. EFT/havale ücretleri konusundaki şeffaflık eksikliği de önemli bir eleştiri konusudur.",
-        tavsiye: "Genel arayüz ve navigasyon mimarisi kullanıcı araştırmaları doğrultusunda basitleştirilmeli. Bildirim ve reklam yönetimi kullanıcı kontrolüne bırakılmalı. Kimlik doğrulama ve SIM bloke süreçleri stabilize edilmeli.",
+        name: "Akbank", storeRating: 4.8, score: 1.90, totalLow: 24, errors: { login: 2, onboard: 4, system: 10, support: 2, ux: 12 },
+        durum: "Akbank mobil uygulaması, özellikle Android cihazlarda performans sorunları, NFC ile kimlik doğrulama süreçlerindeki başarısızlıklar ve sıkça karşılaşılan teknik aksaklıklar nedeniyle operasyonel stabilite açısından zayıf bir profil çizmektedir. Müşteri hizmetlerine erişim zorlukları ve bildirim yönetimi sorunları, kullanıcı memnuniyetini düşürmektedir.",
+        friksiyon: "Uygulamanın yavaş çalışması, sık sık hata vermesi (özellikle Android platformda) ve NFC ile kimlik doğrulama/şifre değiştirme gibi temel güvenlik ve erişim süreçlerinin istikrarsızlığı, kullanıcılar için en büyük operasyonel friksiyonu oluşturmaktadır. Ayrıca, gereksiz ve agresif reklam bildirimleri ile önemli bilgilerin geç bildirilmesi de memnuniyetsizlik yaratmaktadır.",
+        tavsiye: "Uygulama performansını ve stabiliteyi artırmak için teknik altyapı güçlendirilmeli ve özellikle Android platformdaki yavaşlık, donma ve hata verme sorunları acilen çözülmelidir. NFC ve yüz tanıma gibi kimlik doğrulama mekanizmalarının güvenilirliği iyileştirilmelidir. Bildirim sistemi önemli bilgiler için önceliklendirilerek gereksiz reklam bombardımanı sonlandırılmalıdır.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Numara değiştirmeye çalışıyorum, eski numarama mesaj atıyor. Kimlik kartıyla doğrula diyorum, NFC ile okumuyor." },
-          { kategori: "system", yildiz: 1, metin: "Samsung S23'de uygulamadan çıkıp belli bir süre sonra tekrar girince 'oturumun kapandı' diyerek 10-15 tane popup çıkıyor." },
-          { kategori: "support", yildiz: 1, metin: "5 aydır 2000 TL kart harcama itirazım var, 5 aydır çözemediler. Sanki atomu parçalıyorlar." },
-          { kategori: "ux", yildiz: 1, metin: "Bir çok banka uygulaması gördüm ama bunun kadar kötü arayüzü olan görmedim. En saçma olan arama kısmı — bankanın hangi hizmetleri verdiğini uygulamada nasıl göreceğim?" }
+          { kategori: "login", yildiz: 1, metin: "Kaç haftadır şifremi değiştirmeye çalışıyorum, yüz taramaya geldiği an donuyor. Müşteri hizmetlerine bağlanıp öyle değiştiriyim diyorum onun için de mobil şifreyi şart koşuyorlar." },
+          { kategori: "onboard", yildiz: 2, metin: "Uygulamanız yeni model Samsung Galaxy A26 telefonumdan ÇİPLİ kimlik kartımı görmedi. İşlem onaylanmayınca bir de hesabıma bloke koydu!" },
+          { kategori: "system", yildiz: 1, metin: "HGS bakiye yükleme işlemi uzun süredir hata veriyor. Uygulamayı hiç mi kontrol etmiyorsunuz." },
+          { kategori: "support", yildiz: 1, metin: "Akbank Mobil üzerinden müşteri hizmetlerine çok geç bağlanılıyor yeri geliyor yoğunluktan olsa gerek hiç bağlanılmıyor." },
+          { kategori: "ux", yildiz: 1, metin: "Etiketlenmemiş menü ismi çok fazla. Görme engellilerin kullandığı ekran seslendirme yazılımları her şey için 'Etiketsiz' diyor." }
         ]
       },
       {
-        name: "Yapı Kredi", storeRating: 4.7, score: 2.43, totalLow: 17, errors: { login: 2, onboard: 0, system: 5, support: 1, ux: 9 },
-        durum: "Yapı Kredi mobil uygulaması yüksek puan almasına rağmen intrusive reklamlar, sistem yavaşlıkları ve giriş/onay süreçlerindeki hatalar nedeniyle kullanıcı memnuniyetini kaybetmektedir.",
-        friksiyon: "Uygulamanın en kritik sorunu, kullanıcı deneyimini doğrudan olumsuz etkileyen aşırı ve kapatılamayan reklam/kampanya bildirimleridir. Sistem performansındaki yavaşlıklar ve işlem zaman aşımı hataları da temel şikayet konularıdır.",
-        tavsiye: "Kullanıcı deneyimi ekibi intrusive reklam ve bildirim stratejilerini acilen revize etmeli, kullanıcılara tam kontrol sağlamalıdır. Uygulama performansı artırılmalı, finansal bilgilendirmeler sadeleştirilmelidir.",
+        name: "Yapı Kredi", storeRating: 4.7, score: 2.23, totalLow: 22, errors: { login: 5, onboard: 1, system: 6, support: 3, ux: 15 },
+        durum: "Yapı Kredi mobil uygulaması, giriş sorunları, sistem çökmeleri ve aşırı reklam yükü nedeniyle operasyonel verimlilikte ciddi düşüşler yaşamaktadır. Müşteri hizmetlerine ulaşmak ve sorunlara çözüm bulmak zorlaşmış, bu da kullanıcı memnuniyetsizliğini artırmıştır. Uygulamanın karmaşık arayüzü ve bazı temel bankacılık özelliklerindeki kısıtlamalar, dijital penetrasyonu yavaşlatmaktadır.",
+        friksiyon: "Uygulamanın sık sık donması, çökmesi ve şifre/giriş ekranlarında yaşanan hatalar, kullanıcıların acil bankacılık ihtiyaçlarını karşılamasını engellemektedir. Aşırı ve ısrarcı reklam pop-up'ları, kullanıcı deneyimini bozarak ana işlevlere erişimi zorlaştırmaktadır. EFT ücretleri ve banka kartından vergi ödeme gibi temel işlemlerdeki kısıtlamalar da kritik öneme sahiptir.",
+        tavsiye: "Uygulamanın performansını ve stabilitesini artırmak için teknik altyapı güçlendirilmeli, giriş ve şifre yenileme süreçleri sorunsuz hale getirilmelidir. Reklam stratejileri acilen gözden geçirilmeli, kullanıcıyı rahatsız etmeyen, izin bazlı ve kişiselleştirilmiş bir sisteme geçilmelidir. Müşteri hizmetlerine erişim kolaylaştırılmalı ve şubeye bağımlılığı azaltacak şekilde mobil kanallardan daha fazla işlemin yapılması sağlanmalıdır.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Uygulamaya giriş yapamıyorum, 2 yıldır kullanıyorum, 2 aydır sorun var. 'İstek zaman aşımına uğramıştır' diye hata veriyor." },
-          { kategori: "system", yildiz: 1, metin: "Sürekli olarak 'işlem zaman aşımına uğradı' ikazı alıyorum. İşlemlerimde çok uzun bekletiyor ve yarıda bırakıp kapanıyor." },
-          { kategori: "support", yildiz: 1, metin: "Çok saçma sapan bir uygulama yapmışsınız. Ne müşteri hizmetleri ne de otomatik cevap veren bir yapay zeka bile yok, ne halta yarıyor bu uygulama." },
-          { kategori: "ux", yildiz: 1, metin: "Uygulamada her an önünüze bir şeyler açılıyor (popup) ve tam ekrana dokunacağınız yerde de 'onaylıyorum', 'kabul ediyorum' gibi butonlar oluyor." }
+          { kategori: "login", yildiz: 1, metin: "şifremi unuttum diye yeni şifre almaya çalışıyorum hiç bir şekilde oluşturduğum şifreyi kabul etmiyor 2 aydır bu sorun devam ediyor silip tekrar yükledim ama yine düzelmedi." },
+          { kategori: "onboard", yildiz: 1, metin: "uygulamaya giremiyorum, kuryede kartınız var yazıyor, halbuki kart geleli 1 hafta oldu, şifre falan da alamıyorum." },
+          { kategori: "system", yildiz: 1, metin: "Sürekli zaman aşımı sürekli gereksiz güncelleme çok kötü bir uygulama hala devam ediyor hafta sonu hiçbir işlem yapamadım 1000 defa giriş denedim." },
+          { kategori: "support", yildiz: 1, metin: "Bir problem olursa şunu bilin ki Müşteri hizmetleri ile görüşmek imkansız. Diyelim ki görüştünüz sorun kesinlikle MÜŞTERİ kaynaklıdır, yada MÜŞTERİNİN telefonundan kaynaklanmıştır." },
+          { kategori: "ux", yildiz: 1, metin: "kampanya bildirimleri hiç bir yerden kapanmıyo. bildirim ayarlarına kampanya vs bildirimlerini kapatmayı koymamışlar. sürekli bildirim atıyolar yorulduk." }
         ]
       },
       {
-        name: "CEPTETEB", storeRating: 4.1, score: 2.10, totalLow: 21, errors: { login: 11, onboard: 0, system: 5, support: 0, ux: 5 },
-        durum: "CEPTETEB mobil uygulaması giriş/aktivasyon süreçlerindeki kronik sorunlar ve sistem hataları nedeniyle ciddi operasyonel aksaklıklar yaşamaktadır. Algılanan 'zararlı yazılım' uyarıları ve NFC/SMS doğrulama sorunları yüksek friksiyon yaratmaktadır.",
-        friksiyon: "Giriş ve kimlik doğrulama mekanizmalarının (SMS, NFC, SIM bloke kaldırma) istikrarsız ve başarısız olması kullanıcıların uygulamaya erişimini engellemektedir. Sanal kart ve NFC ödeme gibi temel özelliklerin eksikliği de önemli şikayet konusudur.",
-        tavsiye: "Giriş/yetkilendirme altyapısı acilen modernize edilmeli. SIM bloke kaldırma ve NFC kimlik doğrulama basitleştirilmeli. Sanal kart ve NFC ödeme özellikleri eklenmeli. 'Zararlı yazılım' algılama algoritması gözden geçirilmelidir.",
+        name: "CEPTETEB", storeRating: 4.2, score: 2.07, totalLow: 24, errors: { login: 5, onboard: 5, system: 9, support: 3, ux: 8 },
+        durum: "CEPTETEB uygulaması, sürekli hata verme, giriş sorunları ve NFC tabanlı kimlik doğrulama süreçlerindeki başarısızlıklar nedeniyle ciddi operasyonel aksaklıklar yaşamaktadır. ATM ve dijital işlemlerin kısıtlılığı, müşteri hizmetleri kalitesindeki düşüş, dijital kanallar üzerinden tam hizmet alamama algısını güçlendirmektedir.",
+        friksiyon: "Uygulamanın sıklıkla çökmesi, hata vermesi ve özellikle 'şu anda işleminizi gerçekleştiremiyoruz' uyarısıyla kullanıcıların temel bankacılık işlemlerini yapmasını engellemesi en kritik operasyonel sorundur. NFC ile kimlik doğrulama süreçlerinin güvenilir olmaması ve müşteri hizmetlerinin yetersizliği de önemli memnuniyetsizlik kaynaklarıdır.",
+        tavsiye: "Uygulamanın temel performans ve stabilite sorunları (çökmeler, donmalar, hata mesajları) acilen giderilmeli, teknik altyapı güncellenmelidir. NFC tabanlı kimlik doğrulama ve şifre yenileme süreçleri, kullanıcı dostu ve güvenilir hale getirilmelidir. Müşteri hizmetleri kanallarının etkinliği artırılmalı ve şubeye bağımlılığı azaltacak şekilde mobil üzerinden daha fazla işlemin yapılması sağlanmalıdır.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Uygulaması çok sıkıntılı. Aktivasyon yapıldıktan KESİNLİKLE giriş yapılamıyor. Her seferinde aktivasyonu bozup yeniden SMS ile giriş yapmak gerekiyor." },
-          { kategori: "system", yildiz: 1, metin: "'Cihazınızda zararlı uygulama tespit edildi' deyip girmiyor, silip yüklüyorum aynı. Kaç tane antivirüs programıyla cihazımı taradım, bulamıyor." },
-          { kategori: "ux", yildiz: 1, metin: "Mecburiyetten şirketim yüzünden kullanıyorum. Hiçbir işimi halledemediğim bir uygulama." }
+          { kategori: "login", yildiz: 1, metin: "Uygulama sürekli hata veriyor. Giriş yapılmıyor, beklenmeyen hata uyarısı veriyor. Her güncelleme geldiğinde aynı şey, bıktık artık." },
+          { kategori: "onboard", yildiz: 1, metin: "para transferi çok geç gerçekleşiyor şifrenizi unuttuğunuz zaman NFC özelliği ile kimlik okuma istiyor bir türlü olmuyor." },
+          { kategori: "system", yildiz: 5, metin: "Kullanabilirlik açısından en iyi banka uygulaması ama her şifre girdiğimde hata verip atiyor ve ayrıca çok kasiyor. Uygulamayı silip yükledim ama yine aynı." },
+          { kategori: "support", yildiz: 1, metin: "Hiç bir ihtiyacımızı karşılamıyor ATM den para çekemiyoruz, E-devletten şifre yenileyemiyoruz teb internet bankacılığını kullanarak, Teb kredi kartından mail order yöntemiyle alış veriş yapamıyoruz." },
+          { kategori: "ux", yildiz: 1, metin: "Samsung s24+ kullanıyorum menüyü sağdan sola kaydırırken ana menüye dönmüyor ekran orantı ölçüleri uyumsuz sonuçta bankacılık işlemi yapacağız anlaşılır pratik birşekilde olması gerekir." }
         ]
       },
       {
-        name: "MobilDeniz", storeRating: 4.6, score: 2.03, totalLow: 22, errors: { login: 6, onboard: 0, system: 4, support: 1, ux: 11 },
-        durum: "MobilDeniz uygulaması genel kullanıcı memnuniyeti ve operasyonel stabilite açısından ciddi sorunlar yaşamaktadır. Giriş aksaklıkları, sistemin temel fonksiyonlarda hata vermesi ve arayüzdeki kalıcı görsel bozukluklar yüksek churn riski yaratmaktadır.",
-        friksiyon: "En kritik sorun uygulamanın temel erişilebilirliğini etkileyen giriş ve şifre doğrulama sorunlarıdır. Güncellemeler sonrası arayüz uyumsuzlukları, hatalı bilgi gösterimleri ve genel yavaşlık da kullanıcıların verimli kullanmasını engellemektedir.",
-        tavsiye: "Giriş/yetkilendirme modülleri stabilize edilmeli, SMS/NFC doğrulama süreçleri güvenilir hale getirilmelidir. Arayüz farklı cihaz ve OS versiyonlarıyla uyumluluk açısından kapsamlı testlerden geçirilmeli. Ücretlendirme politikaları şeffaf biçimde iletilmelidir.",
+        name: "MobilDeniz", storeRating: 4.6, score: 1.83, totalLow: 25, errors: { login: 3, onboard: 5, system: 8, support: 6, ux: 8 },
+        durum: "MobilDeniz uygulaması, kritik sistem hataları, giriş ve müşteri olma süreçlerindeki aksaklıklar ve müşteri hizmetlerine erişimdeki kronik sorunlar nedeniyle düşük operasyonel performansa sahiptir. Özellikle Moneygram transferleri, pos ödemeleri ve ek hesap görünürlüğü gibi alanlarda yaşanan sorunlar, kullanıcıların finansal işlemlerini sekteye uğratmaktadır.",
+        friksiyon: "Uygulamanın sıklıkla çökmesi, 'internet bağlantınızı kontrol edin' gibi yanıltıcı hatalar vermesi ve kullanıcıların giriş yapmasını engellemesi en kritik operasyonel sorunlardır. Müşteri hizmetlerine ulaşılamaması veya yetersiz çözümler sunulması, kullanıcıların güvenini sarsmaktadır.",
+        tavsiye: "Uygulamanın temel stabilite ve performans sorunları (çökmeler, hatalı uyarılar, giriş engelleri) acilen giderilmeli, teknik altyapı güçlendirilmelidir. Müşteri hizmetleri kalitesi artırılarak dijital kanallardan çözülemeyen sorunlara etkin çözümler sunulmalıdır. Dijital müşteri edinme süreçleri (görüntülü görüşme, kimlik onayı) sorunsuz hale getirilmeli ve kampanya vaatleri ile gerçek sunulan hizmetler arasındaki tutarlılık sağlanmalıdır.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Uygulamaya giriş yapamıyorum, hemen çıkıyor. Uygulamayı silip tekrar yükledim fakat yine aynı oldu. Güncelleme yaptım yine değişmedi." },
-          { kategori: "system", yildiz: 1, metin: "Ticari sanal kartımın limiti eksi (negatif) -78 bin TL şu anda. Kaç tane büyük bankanın sanal kartını kullanıyorum, böyle bir şey hiçbirinde yok." },
-          { kategori: "support", yildiz: 1, metin: "Günümüz şartlarında çok geri kalmış bir uygulama. Telefonda 10 dakika bekletildim, çok basit bir para kartı kapatma işlemini bile yapamadılar." },
-          { kategori: "ux", yildiz: 1, metin: "Son güncellemeden sonra yazı tipi fontu büyük boyuta geçti, hiçbir şekilde düzelmiyor. Gözleri görmekte zorluk yaşayan aile büyüklerimizin kullandığı modda uygulama sadece MobilDeniz — acil düzeltilmesi gerekiyor." }
+          { kategori: "login", yildiz: 1, metin: "mobil bankacılık açılmıyor bir aydır giremiyorum, hata detayı uygulama açılmıyor siliyom tekrar yüklüyom bir kere giriş yapabiliyom sonrası yok." },
+          { kategori: "onboard", yildiz: 2, metin: "uygulamayı indiriyorsunuz, tüm kimlik bilgilerinizi giriyorsunuz, kimliğinizi taratıyorsunuz. Sonuç: müşteri olma işlemlerini tamamlamak için en yakın şubemize bekliyoruz diyip kapatıyor." },
+          { kategori: "system", yildiz: 1, metin: "DenizBank mobil uygulaması günlerdir 'İnternet bağlantınızı kontrol ediniz' hatası vermektedir. İnternet bağlantımda hiçbir problem yoktur." },
+          { kategori: "support", yildiz: 2, metin: "ne kadar saçma bir banka sisteminiz var saatlerce uğraşıp müşteri temsilcisine hiç bir şekilde bağlanıyorum. Her seferinde otomatik beni mobil bankacılığa yönlendiriyor." },
+          { kategori: "ux", yildiz: 1, metin: "ÇOK AMA ÇOOOKKK KARIŞIK İÇİNDEN CIKAMAZSINIZ BIRDE KURUMSAL KULLANIYORSANIZ EYVAH EYVAH VAY HALINIZE. Sırf bu uygulama yüzünden bankayı kullanmıyorum." }
         ]
       },
       {
-        name: "ING Mobil", storeRating: 4.8, score: 2.97, totalLow: 14, errors: { login: 4, onboard: 0, system: 4, support: 1, ux: 5 },
-        durum: "ING Mobil uygulaması yüksek pazar puanına rağmen giriş ve yetkilendirme sorunları, sistemin yavaş çalışması ve beklenmedik çökmeler ile temel bankacılık işlemlerinin güvenilirliğini sorgulatmaktadır. Yoğun reklamlar da friksiyonu artırmaktadır.",
-        friksiyon: "Uygulamanın en kritik sorunu, kullanıcının sisteme erişimini ve temel işlemleri (para transferi, fatura ödeme) engelleyen sistemik hatalar ve performans düşüşleridir. Müşteri hizmetlerine erişimdeki zorluklar sorunların çözümsüz kalmasına neden olmaktadır.",
-        tavsiye: "Temel performans ve stabilite sorunları (yavaşlık, çökme, pil tüketimi) öncelikli giderilmeli, altyapı güçlendirilmelidir. Müşteri hizmetleri entegrasyonu güçlendirilmeli. Reklam ve kampanya sunumları daha az intrusive hale getirilmelidir.",
+        name: "ING Mobil", storeRating: 4.8, score: 2.60, totalLow: 20, errors: { login: 2, onboard: 1, system: 9, support: 3, ux: 15 },
+        durum: "ING Mobil uygulaması, yatırım ve bankacılık işlemleri sırasında sıkça meydana gelen sistem donmaları, hatalar ve genel yavaşlık nedeniyle operasyonel verimlilikte önemli eksiklikler sergilemektedir. Müşteri hizmetlerine ulaşım zorluğu ve bazı temel bankacılık özelliklerindeki kısıtlamalar, kullanıcıların dijital deneyimini olumsuz etkilemektedir.",
+        friksiyon: "Uygulamanın en kritik sorunları, yatırım işlemlerinde yaşanan donmalar ve hatalardır. Bunun yanı sıra, uygulamanın sürekli kendini kapatması, yavaş çalışması ve şifre yenileme süreçlerindeki aksaklıklar, kullanıcıların temel bankacılık ihtiyaçlarını karşılamasını engellemektedir. Agresif reklam pop-up'ları ve kampanya takibindeki yetersizlikler de önemli UX friksiyonları yaratmaktadır.",
+        tavsiye: "Uygulamanın teknik altyapısı güçlendirilmeli, özellikle yatırım işlemleri bölümündeki donma ve hata verme sorunları acilen giderilmelidir. Uygulama performansı (hız, stabilite, çökmelerin önlenmesi) artırılmalı ve şifre yenileme süreçleri sorunsuz hale getirilmelidir. Reklam stratejileri, kullanıcı deneyimini bozmayacak şekilde revize edilmeli ve kampanya takibi kolaylaştırılmalıdır.",
         yorumlar: [
-          { kategori: "login", yildiz: 1, metin: "Mobil veride de Wi-Fi'a bağlayınca da uygulamaya girince sürekli kendini kapatıyor. Silip baştan yüklemekten artık bıktım bu uygulamayı." },
-          { kategori: "system", yildiz: 1, metin: "Fatura ödemesi yaptım fakat faturalarım bölümünden faturanın ödenmediğini gördüm. Tekrar faturayı öde dedim. 2 defa aynı faturayı ödemiş." },
-          { kategori: "support", yildiz: 1, metin: "Berbat. Özellikle telefon bankacılığı ve müşteri hizmetlerine bağlanmak son derece kötü. Diğer bankalarla kıyaslandığında sonuncu sırada." },
-          { kategori: "ux", yildiz: 1, metin: "Uygulamaya girer girmez sürekli reklam pop-up saldırısına uğruyorum. Banner var kocaman, o yetmiyor, fazladan 4-5 defa basamak gerekiyor bir işlem için." }
+          { kategori: "login", yildiz: 1, metin: "yeni şifre istiyor yeniliyoruz ekran donuyor bekle babam bekle birde kendi kafasına bana tek kullanımlık şifre istiyor senden şifre isteyenmivar tam bir fiyasko." },
+          { kategori: "onboard", yildiz: 1, metin: "3 hafta önce telefon aldım ve hattımı yükselttik bilgilerim silindi. kimlik kartımı kaybettim geçici belgem var. ing mobil indiremiyorum. bugün ödeme son günü ve 0850lili numaradan müşteri hizmetlerine bağlanamıyorum." },
+          { kategori: "system", yildiz: 1, metin: "uygulamada inanılmaz derecede çok hata var, yatırım işlemlerinin tamamında sistem donuyor, komple çıkmaktan başka çare kalmıyor." },
+          { kategori: "support", yildiz: 1, metin: "Berbat. Özellikle Telefon bankacılığı ve Müşteri hizmetlerine bağlanmak son derece kötü. Diğer bankalarla kıyaslandığında sonuncu sırada." },
+          { kategori: "ux", yildiz: 3, metin: "uygulama içindeyken alakasız bir anda pat diye ekrana kampanya reklamı gelmesi çok rahatsız edici ve kapatmak istediğimde çarpı küçük olduğu için yanlışlıkla basıyorum bunu yapmanıza gerek yok." }
         ]
       }
     ];
@@ -2563,7 +2574,7 @@
     const grandTotal = Object.values(totals).reduce((a, b) => a + b, 0);
     const dSVG = document.getElementById('donut-svg');
     const dLegend = document.getElementById('donut-legend');
-    const cx = 90, cy = 90, r = 72, inR = 44;
+    const cx = 200, cy = 200, r = 165, inR = 100;
     let sa = -Math.PI / 2;
     CAT_KEYS.forEach((k, i) => {
       const val = totals[k], pct = ((val / grandTotal) * 100).toFixed(1);
@@ -2578,11 +2589,11 @@
       dLegend.appendChild(li);
     });
     function mkTxt(x, y, txt, sz, fill, w) { const t = document.createElementNS('http://www.w3.org/2000/svg', 'text'); t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', sz); t.setAttribute('fill', fill); t.setAttribute('font-family', 'Syne,sans-serif'); t.setAttribute('font-weight', w || '400'); t.textContent = txt; return t; }
-    dSVG.appendChild(mkTxt(cx, cy - 2, grandTotal, 22, '#1a2420', '700'));
-    dSVG.appendChild(mkTxt(cx, cy + 14, 'TOPLAM', 8, '#5a7a6a'));
+    dSVG.appendChild(mkTxt(cx, cy - 6, grandTotal, 48, '#1a2420', '700'));
+    dSVG.appendChild(mkTxt(cx, cy + 24, 'TOPLAM', 16, '#5a7a6a'));
 
     // ── RADAR ────────────────────────────────────────────────────────────────────
-    const activeBanks = new Set(['ING Mobil', 'Ziraat Mobil', 'MobilDeniz']);
+    const activeBanks = new Set(['CEPTETEB']);
     const radarBankList = banks.filter(b => b.score !== null);
     const radarControls = document.getElementById('radar-controls');
     radarBankList.forEach((bank, i) => {
@@ -2652,7 +2663,7 @@
       const thead = document.createElement('thead'); const hRow = document.createElement('tr');
       hRow.innerHTML = `<th class="bank-col">BANKA</th>`;
       CAT_LABELS.forEach((l, i) => hRow.innerHTML += `<th style="color:${CAT_HEX[i]}">${CAT_SHORT[i].toUpperCase()}</th>`);
-      hRow.innerHTML += `<th>TOPLAM</th><th>CHURN</th>`;
+      hRow.innerHTML += `<th>CHURN</th>`;
       thead.appendChild(hRow); table.appendChild(thead);
       const tbody = document.createElement('tbody');
       banks.forEach(bank => {
@@ -2661,7 +2672,6 @@
         const churn = getChurnRisk(bank);
         let h = `<td class="bank-name-cell">${window.innerWidth <= 600 ? bank.name.split(' ')[0] : bank.name}</td>`;
         CAT_KEYS.forEach(k => { const v = bank.errors[k]; h += `<td class="heat-cell" style="background:${heatBg(v, maxPerCat[k])};color:${heatTxt(v, maxPerCat[k])}">${v}</td>`; });
-        h += `<td style="font-family:'Syne',sans-serif;font-weight:700;color:${total > 20 ? '#c0392b' : total > 14 ? '#d68910' : '#5a7a6a'}">${total}</td>`;
         h += `<td>${churnBadge(churn.level, churn.label.split(' ')[0], 'font-size:8px;padding:3px 4px;border-radius:3px')}</td>`;
         tr.innerHTML = h; tbody.appendChild(tr);
       });
